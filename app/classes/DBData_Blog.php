@@ -8,7 +8,7 @@ class DBData_Blog
     {
         $dsn = 'mysql:host=localhost;dbname=site-personnel;charset=utf8';
         $username = 'root';
-        $password = '';
+        $password = 'Ereul9Aeng';
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
         ];

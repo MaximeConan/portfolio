@@ -11,7 +11,8 @@ if (isset($_GET['id'])) {
     $articleId = intval($_GET['id']);
 }
 
-include __DIR__ . 'templates/header.php'; 
+dump($post);
+
 ?>
 
 <div class="container pt-5 pb-5">
@@ -37,5 +38,3 @@ include __DIR__ . 'templates/header.php';
         </div>
     </div>
 </div>
-
-<?php include __DIR__ . 'templates/footer.php'; ?>

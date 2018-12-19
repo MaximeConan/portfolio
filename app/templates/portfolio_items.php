@@ -22,7 +22,7 @@ $portfolioList = $dbData->getPortfolioList();
     <div class="portfolio background-img" style="background-image:url(<?= $portfolio->image ?>);">
         <p><?= $portfolio->category; ?></p>
         <p><?= $portfolio->title; ?></p>
-        <p><a href="single-portfolio.php?id=<?= $portfolio->id ?>">Voir le projet</a></p>
+        <p><a href="projet/<?= $portfolio->id ?>">Voir le projet</a></p>
     </div>
 </div>
 <?php endforeach; ?>

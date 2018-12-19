@@ -17,7 +17,7 @@ $postList = $dbData->getPostsList();
             <p class="meta-categorie"><?= $post->category; ?></p>
             <h3><?= $post->title; ?></h3>
             <p><?= $post->resume; ?></p>
-        <p><a href="single-article.php?id=<?= $post->id ?>">Lire la suite</a></p>
+        <p><a href="article/<?= $post->id ?>">Lire la suite</a></p>
 
         </div>
     </div>

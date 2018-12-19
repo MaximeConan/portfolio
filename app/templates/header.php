@@ -7,8 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/../portfolio/public/css/reset.css">
+    <link rel="stylesheet" href="/../portfolio/public/css/style.css">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <!-- Download Google Fonts -->
@@ -36,7 +36,7 @@
         
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                    <li class="hvr-sweep-to-right nav-item"><a class="nav-link" href="index.php"><i class="fas fa-home icon-nav"></i>Accueil</a></li>
+                    <li class="hvr-sweep-to-right nav-item"><a class="nav-link" href="/portfolio/public"><i class="fas fa-home icon-nav"></i>Accueil</a></li>
                         <li class="hvr-sweep-to-right nav-item"><a class="nav-link" href="parcours"><i class="fas fa-user icon-nav"></i>Mon parcours</a></li>
                         <li class="hvr-sweep-to-right nav-item"><a class="nav-link" href="portfolio"><i class="fas fa-tv icon-nav"></i>Portfolio</a></li>
                         <li class="hvr-sweep-to-right nav-item"><a class="nav-link" href="blog"><i class="fas fa-list icon-nav"></i>Blog</a></li>
