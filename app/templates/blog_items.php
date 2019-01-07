@@ -1,12 +1,11 @@
 <?php
-include __DIR__ . '/../classes/Category_Blog.php';
-include __DIR__ . '/../classes/Single_Blog.php';
-include __DIR__ . '/../classes/DBData_Blog.php';
 $dbData = new DBData_Blog();
 
 $categoriesBlogList = $dbData->getCategoriesBlogList();
 
 $postList = $dbData->getPostsList();
+
+dump($postList);
 ?>
 
 <?php foreach ($postList as $post): ?>
@@ -14,10 +13,10 @@ $postList = $dbData->getPostsList();
     <div class="blog-post">
         <img src="<?= getAbsolutePath('/images/bkg/bkg-header.jpg')?>" alt="description de l'article">
         <div class="p-3">
-            <p class="meta-categorie"><?= $post->category; ?></p>
-            <h3><?= $post->title; ?></h3>
-            <p><?= $post->resume; ?></p>
-        <p><a href="article/<?= $post->id ?>">Lire la suite</a></p>
+            <p class="meta-categorie"><?= $post->getCategoryBlogName(); ?></p>
+            <h3><?= $post->getTitle(); ?></h3>
+            <p><?= $post->getResume(); ?></p>
+        <p><a href="article/<?= $post->getId() ?>">Lire la suite</a></p>
 
         </div>
     </div>

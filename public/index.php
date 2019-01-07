@@ -11,6 +11,13 @@ include __DIR__ . '/../app/controllers/ErrorController.php';
 include __DIR__ . '/../app/controllers/PostController.php';
 include __DIR__ . '/../app/controllers/PortfolioController.php';
 
+include __DIR__ . '/../app/models/Category_Blog.php';
+include __DIR__ . '/../app/models/Category_Portfolio.php';
+include __DIR__ . '/../app/models/DBData_Blog.php';
+include __DIR__ . '/../app/models/DBData_Portfolio.php';
+include __DIR__ . '/../app/models/Single_Blog.php';
+include __DIR__ . '/../app/models/Single_Portfolio.php';
+
 $router = new AltoRouter();
 
 // On a fait en sorte d'automtiser grâce au htaccess la génération de $_SERVER['BASE_URI']. On appelle la méthode SetBasePath pour éviter de répéter dans toutes nos routes le chemin complet de l'URL (S05/E03/s05-e03-oshop-MaximeConan/public)
