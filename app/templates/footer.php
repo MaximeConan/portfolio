@@ -1,10 +1,10 @@
 <footer class="text-center text-light">
             <h2 class="text-light">Le web, vu différement</h2>
             <ul>
-                <li><a href="/portfolio/public"><i class="fas fa-home icon-nav"></i>Accueil</a></li>
-                <li><a href="parcours"><i class="fas fa-user icon-nav"></i>Mon parcours</a></li>
-                <li><a href="portfolio"><i class="fas fa-tv icon-nav"></i>Portfolio</a></li>
-                <li><a href="contact"><i class="fas fa-envelope icon-nav"></i>Contactez-moi</a></li>
+                <li><a href="<?= getAbsolutePath('/')?>"><i class="fas fa-home icon-nav"></i>Accueil</a></li>
+                <li><a href="<?= getAbsolutePath('/parcours')?>"><i class="fas fa-user icon-nav"></i>Mon parcours</a></li>
+                <li><a href="<?= getAbsolutePath('/portfolio')?>"><i class="fas fa-tv icon-nav"></i>Portfolio</a></li>
+                <li><a href="<?= getAbsolutePath('/contact')?>"><i class="fas fa-envelope icon-nav"></i>Contactez-moi</a></li>
                 <li><a href="#"><i class="fas fa-download icon-nav"></i>Téléchargez mon CV</a></li>
             </ul>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ipsa! Harum et dignissimos dolores incidunt atque suscipit unde dolore repellat?</p>

@@ -37,7 +37,7 @@ class DBData_Portfolio
         return $categoriesList; // On retourne le tableau désormais remplit avec le foreach
     }
 
-    public function getPortfolioList()
+    public function getPortfolioList($portfolioId)
     {
         $portfolioListQuery = '
         SELECT 
@@ -50,7 +50,8 @@ class DBData_Portfolio
             category_portfolio.name AS categoryPortfolioName
         FROM portfolio
         JOIN category_portfolio ON category_portfolio.id = portfolio.category_id;
-        ';
+        WHERE `product`.`id` = ' . $portfolioId
+        ;
 
         $portfolioListQueryStatement = $this->pdo->query($portfolioListQuery);
         $portfolioListQueryResults = $portfolioListQueryStatement->fetchAll(PDO::FETCH_ASSOC);

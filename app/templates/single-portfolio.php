@@ -8,7 +8,7 @@ $portfolio = $dbData->getPortfolio();
 $categoriesPortfolioList = $dbData->getCategoriesPortfolioList();
 
 if (isset($_GET['id'])) {
-    $portfolioId = intval($_GET['id']);
+    $portfolio = intval($_GET['id']);
 }
 
 dump($portfolio);
@@ -16,7 +16,7 @@ dump($portfolio);
 <div class="container">
     <div class="row">
         <div class="col-lg-12  mb-4">
-            <img src="<?= $portfolio->image ?>">
+            <img src="<?= getAbsolutePath($portfolio->image) ?>">
                 <p><?= $portfolio->category; ?></p>
                 <p><?= $portfolio->title; ?></p>
                 <p><?= $portfolio->content ?></p>

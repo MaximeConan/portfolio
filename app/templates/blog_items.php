@@ -12,7 +12,7 @@ $postList = $dbData->getPostsList();
 <?php foreach ($postList as $post): ?>
 <div class="col-lg-4 mb-4">
     <div class="blog-post">
-        <img src="images/bkg/bkg-header.jpg" alt="description de l'article">
+        <img src="<?= getAbsolutePath('/images/bkg/bkg-header.jpg')?>" alt="description de l'article">
         <div class="p-3">
             <p class="meta-categorie"><?= $post->category; ?></p>
             <h3><?= $post->title; ?></h3>

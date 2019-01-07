@@ -19,7 +19,7 @@ dump($post);
     <div class="row">
         <div class="col-lg-12 mb-4">
             <div class="blog-post">
-                <img src="../images/bkg/bkg-header.jpg" alt="description de l'article">
+                <img src="<?= getAbsolutePath('/images/bkg/bkg-header.jpg')?>" alt="description de l'article">
                 <div class="p-3">
                     <p class="meta-categorie">
                     <?php

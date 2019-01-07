@@ -19,7 +19,7 @@ $portfolioList = $dbData->getPortfolioList();
 
 <?php foreach ($portfolioList as $portfolio): ?>
 <div class="col-lg-4 text-light mb-4 filter <?= $portfolio->category_filter ?>">
-    <div class="portfolio background-img" style="background-image:url(<?= $portfolio->image ?>);">
+    <div class="portfolio background-img" style="background-image:url(<?= getAbsolutePath($portfolio->image) ?>);">
         <p><?= $portfolio->category; ?></p>
         <p><?= $portfolio->title; ?></p>
         <p><a href="projet/<?= $portfolio->id ?>">Voir le projet</a></p>

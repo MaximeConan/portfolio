@@ -5,6 +5,7 @@
 // Inclusion de nos dépendances provenant de composer
 include __DIR__ . '/../vendor/autoload.php';
 
+include __DIR__ . '/../app/helper/path.php';
 include __DIR__ . '/../app/controllers/MainController.php';
 include __DIR__ . '/../app/controllers/ErrorController.php';
 include __DIR__ . '/../app/controllers/PostController.php';
