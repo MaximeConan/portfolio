@@ -1,12 +1,11 @@
 <?php
-include __DIR__ . '/../classes/Category_Portfolio.php';
-include __DIR__ . '/../classes/Single_Portfolio.php';
-include __DIR__ . '/../classes/DBData_Portfolio.php';
 $dbData = new DBData_Portfolio();
 
 $categoriesPortfolioList = $dbData->getCategoriesPortfolioList();
 
 $portfolioList = $dbData->getPortfolioList();
+
+dump($portfolioList);
 ?>
 
 <div class="text-center portfolio_filters pb-5">
@@ -18,11 +17,11 @@ $portfolioList = $dbData->getPortfolioList();
 </div>
 
 <?php foreach ($portfolioList as $portfolio): ?>
-<div class="col-lg-4 text-light mb-4 filter <?= $portfolio->category_filter ?>">
-    <div class="portfolio background-img" style="background-image:url(<?= getAbsolutePath($portfolio->image) ?>);">
-        <p><?= $portfolio->category; ?></p>
-        <p><?= $portfolio->title; ?></p>
-        <p><a href="projet/<?= $portfolio->id ?>">Voir le projet</a></p>
+<div class="col-lg-4 text-light mb-4 filter <?= $portfolio->getCategoryFilter() ?>">
+    <div class="portfolio background-img" style="background-image:url(<?= getAbsolutePath($portfolio->getImage()) ?>);">
+        <p><?= $portfolio->getCategoryPortfolioName(); ?></p>
+        <p><?= $portfolio->getTitle(); ?></p>
+        <p><a href="projet/<?= $portfolio->getId() ?>">Voir le projet</a></p>
     </div>
 </div>
 <?php endforeach; ?>

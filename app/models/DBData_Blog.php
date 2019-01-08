@@ -39,7 +39,7 @@ class DBData_Blog
 
     public function getPostsList()
     {
-        $postsListQuery = '
+        $postListQuery = '
         SELECT 
             post.id,
             post.title,
@@ -51,26 +51,19 @@ class DBData_Blog
         JOIN category_blog ON category_blog.id = post.category_id;
         ';
 
-        $postsListQueryStatement = $this->pdo->query($postsListQuery);
-        $postsListQueryResults = $postsListQueryStatement->fetchAll(PDO::FETCH_ASSOC);
-    
-        $postsList = [];
-    
-        foreach ($postsListQueryResults as $postData) {
-            $postList[$postData['id']] = new Post(
-                $postData['id'],
-                $postData['title'],
-                $postData['resume'],
-                $postData['content'],
-                $postData['publishDate'],
-                $postData['categoryBlogName']
-            );
-        }  
+        $postListDetailsQueryStatement = $this->pdo->query($postListQuery);
 
+        $postListDetailsQueryStatement->setFetchMode(
+            PDO::FETCH_CLASS,
+            'Post'
+        );
+    
+        $postList = $postListDetailsQueryStatement->fetchAll();
+    
         return $postList;
     }
 
-    public function getPost()
+    public function getPost($postId)
     {
     $postQuery = '
     SELECT 
@@ -81,23 +74,19 @@ class DBData_Blog
         post.publish_date AS publishDate,
         category_blog.name AS categoryBlogName
     FROM post
-    JOIN category_blog ON category_blog.id = post.category_id;
-    WHERE post.id = 1;
-    ';
+    JOIN category_blog ON category_blog.id = post.category_id
+    WHERE post.id = ' . $postId
+    ;
 
-    $postQueryStatement = $this->pdo->query($postQuery);
-    // Pas de fetchAll car on ne veut afficher qu'un seul résultat (un article sur la page)
-    $postData = $postQueryStatement->fetch(PDO::FETCH_ASSOC);
+    $postDetailsQueryStatement = $this->pdo->query($postQuery);
 
-    $post = new Post (
-        $postData['id'],
-        $postData['title'],
-        $postData['resume'],
-        $postData['content'],
-        $postData['publishDate'],
-        $postData['categoryBlogName']
+    $postDetailsQueryStatement->setFetchMode(
+        PDO::FETCH_CLASS,
+        'Post'
     );
 
-    return $post; // On retourne le tableau désormais remplit avec le foreach
+    $post = $postDetailsQueryStatement->fetch();
+
+    return $post;
     }
 }

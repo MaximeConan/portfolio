@@ -2,14 +2,24 @@
 
 class PortfolioController
 {
-    public function getPortfolio($parameters) 
-    {   
-        dump($parameters);
+    public function getPortfolio($parameters)
+    {
         $portfolioId = $parameters['id'];
-        $this->show('single-portfolio');
-    }
+   
 
-    private function show($viewName)
+        $dbData = new DBData_Portfolio;
+
+        $portfolio = $dbData->getPortfolio($portfolioId);
+        dump($portfolioId);
+        $this->show(
+            'single-portfolio',
+            [
+                'portfolio' => $portfolio
+            ]
+        );    
+
+    }
+    private function show($viewName, $viewVars = [])
     {
         include __DIR__ . '/../templates/header.php';
         include __DIR__ . '/../templates/' . $viewName . '.php';
