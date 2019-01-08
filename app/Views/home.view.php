@@ -56,7 +56,7 @@
                     <div class="col-lg-12 pb-3">
                         <h2>My latest Squarespace projects</h2>
                     </div>
-                    <?php include('portfolio_items.php'); ?>
+                    <?php include('/../Tamplates/portfolio_items.tpl.php'); ?>
                     
                 </div>
             </div>

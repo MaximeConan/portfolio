@@ -1,6 +1,8 @@
 <?php
 
-class PostController
+namespace Portfolio\Controllers;
+
+class PostController extends CoreController
 {
     public function getPost($parameters)
     {
@@ -18,10 +20,4 @@ class PostController
         );
 
     }
-    private function show($viewName, $viewVars = [])
-    {
-        include __DIR__ . '/../templates/header.php';
-        include __DIR__ . '/../templates/' . $viewName . '.php';
-        include __DIR__ . '/../templates/footer.php';
-    } 
 }

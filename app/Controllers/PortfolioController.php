@@ -1,6 +1,8 @@
 <?php
 
-class PortfolioController
+namespace Portfolio\Controllers;
+
+class PortfolioController extends CoreController
 {
     public function getPortfolio($parameters)
     {
@@ -19,10 +21,4 @@ class PortfolioController
         );    
 
     }
-    private function show($viewName, $viewVars = [])
-    {
-        include __DIR__ . '/../templates/header.php';
-        include __DIR__ . '/../templates/' . $viewName . '.php';
-        include __DIR__ . '/../templates/footer.php';
-    } 
 }

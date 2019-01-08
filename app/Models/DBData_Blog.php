@@ -1,5 +1,7 @@
 <?php
 
+namespace Portfolio\Models;
+
 class DBData_Blog
 {
     private $pdo;

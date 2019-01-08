@@ -1,5 +1,7 @@
 <?php
 
+namespace Portfolio\Models;
+
 class Portfolio
 {
     private $id;
