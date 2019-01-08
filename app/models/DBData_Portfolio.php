@@ -76,7 +76,7 @@ class DBData_Portfolio
             `portfolio`.`category_filter` AS categoryFilter,
             `category_portfolio`.`name` AS categoryPortfolioName
         FROM `portfolio`
-        JOIN `category_portfolio` ON `category_portfolio`.`id` = `portfolio`.`category_id`;
+        JOIN `category_portfolio` ON `category_portfolio`.`id` = `portfolio`.`category_id`
         WHERE `portfolio`.`id` = ' . $portfolioId
     ;
 

@@ -63,7 +63,7 @@ class DBData_Blog
         return $postList;
     }
 
-    public function getPost()
+    public function getPost($postId)
     {
     $postQuery = '
     SELECT 
@@ -74,9 +74,9 @@ class DBData_Blog
         post.publish_date AS publishDate,
         category_blog.name AS categoryBlogName
     FROM post
-    JOIN category_blog ON category_blog.id = post.category_id;
-    WHERE post.id = 1;
-    ';
+    JOIN category_blog ON category_blog.id = post.category_id
+    WHERE post.id = ' . $postId
+    ;
 
     $postDetailsQueryStatement = $this->pdo->query($postQuery);
 

@@ -1,11 +1,6 @@
 <?php
-$dbData = new DBData_Blog();
-
-$post = $dbData->getPost();
-$categoriesBlogList = $dbData->getCategoriesBlogList();
-
-dump($post);
-
+    $post = $viewVars['post'];
+    dump($post);
 ?>
 
 <div class="container pt-5 pb-5">
@@ -14,13 +9,7 @@ dump($post);
             <div class="blog-post">
                 <img src="<?= getAbsolutePath('/images/bkg/bkg-header.jpg')?>" alt="description de l'article">
                 <div class="p-3">
-                    <p class="meta-categorie">
-                    <?php
-                    foreach ($categoriesBlogList as $category) {
-                        $category->getName();
-                    }
-                    ?>
-                     </p>
+                    <p class="meta-categorie"><?= $post->getCategoryBlogName(); ?></p>
                     <h1><?= $post->getTitle() ?></h1>
                     <h2 class="pb-2">Résumé de l'article :</h2>
                     <p class="font-weight-bold"><?= $post->getResume() ?></p>

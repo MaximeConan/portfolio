@@ -9,7 +9,7 @@ class PostController
         $dbData = new DBData_Blog;
 
         $post = $dbData->getPost($postId);
-
+        dump($postId);
         $this->show(
             'single-article',
             [
