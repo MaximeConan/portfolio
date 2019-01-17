@@ -2,7 +2,11 @@
 
 namespace Portfolio\Controllers;
 
-class PostController extends CoreController
+use Portfolio\Controllers\CoreController;
+
+use Portfolio\Models\DBData_Blog;
+
+class BlogController extends CoreController
 {
     public function getPost($parameters)
     {

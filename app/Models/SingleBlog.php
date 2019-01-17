@@ -2,7 +2,9 @@
 
 namespace Portfolio\Models;
 
-class Post
+use Portfolio\Models\DBData_Portfolio;
+
+class SingleBlog
 {
     private $id;
     private $title;

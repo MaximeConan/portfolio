@@ -2,6 +2,8 @@
 
 namespace Portfolio\Controllers;
 
+use Portfolio\Controllers\CoreController;
+
 class MainController extends CoreController
 {
     public function home() 

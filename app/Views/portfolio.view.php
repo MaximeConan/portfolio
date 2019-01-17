@@ -11,7 +11,7 @@
 <section class="container-fluid pt-5 pb-5 text-center">
     <div class="container">
         <div class="row">
-            <?php include('portfolio_items.php'); ?>            
+        <?php include (__DIR__ .'/../Templates/portfolio_items.tpl.php');?>            
         </div>
     </div>
 </section>

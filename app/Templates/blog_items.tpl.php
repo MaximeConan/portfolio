@@ -1,11 +1,16 @@
 <?php
+
+use Portfolio\Models\DBData_Blog;
+
+use Portfolio\Models\CategoryBlog;
+
+use Portfolio\Models\PDO;
+
 $dbData = new DBData_Blog();
 
 $categoriesBlogList = $dbData->getCategoriesBlogList();
 
 $postList = $dbData->getPostsList();
-
-dump($postList);
 ?>
 
 <?php foreach ($postList as $post): ?>

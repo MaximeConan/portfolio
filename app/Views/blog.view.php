@@ -11,7 +11,7 @@
 <section class="container-fluid gray-light pb-5 text-center">
     <div class="container">
         <div class="row">
-            <?php include('blog_items.php'); ?>            
+        <?php include (__DIR__ .'/../Templates/blog_items.tpl.php');?>           
         </div>
     </div>
 </section>

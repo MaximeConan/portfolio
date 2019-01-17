@@ -52,7 +52,7 @@ class Application
         $this->router->map('GET', '/portfolio', 'Portfolio\Controllers\MainController#portfolio', 'portfolio');
         $this->router->map('GET', '/blog', 'Portfolio\Controllers\MainController#blog', 'blog');
         $this->router->map('GET', '/contact', 'Portfolio\Controllers\MainController#contact', 'contact');
-        $this->router->map('GET', '/article/[i:id]', 'Portfolio\Controllers\PostController#getPost', 'get_post');
+        $this->router->map('GET', '/article/[i:id]', 'Portfolio\Controllers\BlogController#getPost', 'get_post');
         $this->router->map('GET', '/projet/[i:id]', 'Portfolio\Controllers\PortfolioController#getPortfolio', 'get_portfolio');
     }
 
@@ -84,13 +84,13 @@ class Application
 
         $controller = new $controllerName($this->router);
 
-        //$controller->$methodName($match['params']);
+        $controller->$methodName($match['params']);
 
         // http://php.net/call_user_func_array
         // http://php.net/manual/fr/language.types.callable.php
-        call_user_func_array(
-            [$controller, $methodName],
-            $urlParameters
-        );
+        // call_user_func_array(
+        //     [$controller, $methodName],
+        //     $urlParameters
+        // );
     }
 }

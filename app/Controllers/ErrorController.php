@@ -2,6 +2,8 @@
 
 namespace Portfolio\Controllers;
 
+use Portfolio\Controllers\CoreController;
+
 class ErrorController extends CoreController
 {
     public function page404() {

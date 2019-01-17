@@ -2,6 +2,10 @@
 
 namespace Portfolio\Controllers;
 
+use Portfolio\Controllers\CoreController;
+
+use Portfolio\Models\DBData_Portfolio;
+
 class PortfolioController extends CoreController
 {
     public function getPortfolio($parameters)

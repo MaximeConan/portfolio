@@ -2,6 +2,10 @@
 
 namespace Portfolio\Models;
 
+use Portfolio\Models\CategoryBlog;
+
+use PDO;
+
 class DBData_Blog
 {
     private $pdo;
@@ -57,7 +61,7 @@ class DBData_Blog
 
         $postListDetailsQueryStatement->setFetchMode(
             PDO::FETCH_CLASS,
-            'Post'
+            'Portfolio\Models\SingleBlog'
         );
     
         $postList = $postListDetailsQueryStatement->fetchAll();
@@ -84,7 +88,7 @@ class DBData_Blog
 
     $postDetailsQueryStatement->setFetchMode(
         PDO::FETCH_CLASS,
-        'Post'
+        'Portfolio\Models\SingleBlog'
     );
 
     $post = $postDetailsQueryStatement->fetch();
