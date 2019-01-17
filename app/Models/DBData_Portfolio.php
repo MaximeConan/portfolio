@@ -1,5 +1,13 @@
 <?php
 
+namespace Portfolio\Models;
+
+use Portfolio\Models\CategoryPortfolio;
+
+use Portfolio\Models\SinglePortfolio;
+
+use PDO;
+
 class DBData_Portfolio
 {
     private $pdo;
@@ -56,7 +64,7 @@ class DBData_Portfolio
 
         $portfolioListDetailsQueryStatement->setFetchMode(
             PDO::FETCH_CLASS,
-            'Portfolio'
+            'Portfolio\Models\SinglePortfolio'
         );
     
         $portfolioList = $portfolioListDetailsQueryStatement->fetchAll();
@@ -84,7 +92,7 @@ class DBData_Portfolio
 
     $portfolioDetailsQueryStatement->setFetchMode(
         PDO::FETCH_CLASS,
-        'Portfolio'
+        'Portfolio\Models\SinglePortfolio'
     );
 
     $portfolio = $portfolioDetailsQueryStatement->fetch();

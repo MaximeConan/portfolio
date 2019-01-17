@@ -56,7 +56,7 @@
                     <div class="col-lg-12 pb-3">
                         <h2>My latest Squarespace projects</h2>
                     </div>
-                    <?php include('portfolio_items.php'); ?>
+                    <?php include (__DIR__ .'/../Templates/portfolio_items.tpl.php');?>
                     
                 </div>
             </div>
@@ -81,7 +81,7 @@
                         <div class="col-lg-12 pb-3">
                             <h2>My latest blog posts</h2>
                         </div> 
-                        <?php include('blog_items.php'); ?>                            
+                        <?php include (__DIR__ .'/../Templates/blog_items.tpl.php');?>                         
                 </div>
             </section>
     </main>

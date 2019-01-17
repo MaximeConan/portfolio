@@ -1,6 +1,10 @@
 <?php
 
-class Post
+namespace Portfolio\Models;
+
+use Portfolio\Models\DBData_Portfolio;
+
+class SingleBlog
 {
     private $id;
     private $title;

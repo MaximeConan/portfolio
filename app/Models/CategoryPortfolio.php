@@ -1,13 +1,10 @@
 <?php
 
+namespace Portfolio\Models;
+
 class CategoryPortfolio
 {
     private $name;
-
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
 
     public function getName()
     {
