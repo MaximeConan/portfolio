@@ -1,12 +1,14 @@
 <?php
 
-use Portfolio\Models\DBData_Blog;
+use Portfolio\Utils\Database;
 
 use Portfolio\Models\CategoryBlog;
 
+use Portfolio\Models\BlogModel;
+
 use Portfolio\Models\PDO;
 
-$dbData = new DBData_Blog();
+$dbData = new BlogModel;
 
 $categoriesBlogList = $dbData->getCategoriesBlogList();
 

@@ -30,7 +30,7 @@
   
   <body>
     <header>
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
                     <h1 id="logo">Maxime</h1>

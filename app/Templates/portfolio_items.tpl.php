@@ -1,14 +1,14 @@
 <?php
 
-use Portfolio\Models\DBData_Portfolio;
+use Portfolio\Utils\Database;
 
 use Portfolio\Models\CategoryPortfolio;
 
-use Portfolio\Models\SinglePortfolio;
+use Portfolio\Models\PortfolioModel;
 
 use Portfolio\Models\PDO;
 
-$dbData = new DBData_Portfolio;
+$dbData = new PortfolioModel;
 
 $categoriesPortfolioList = $dbData->getCategoriesPortfolioList();
 
