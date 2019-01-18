@@ -6,9 +6,9 @@ RewriteEngine On
 RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
 RewriteRule ^(.*) - [E=BASE_URI:%1]
 
-# Tout ce qui n'est pas un répertoire existant
+# Tout ce qui n'est pas un rï¿½pertoire existant
 RewriteCond %{REQUEST_FILENAME} !-d
 # Tout ce qui n'est pas un fichier existant
 RewriteCond %{REQUEST_FILENAME} !-f
-# Redirige moi vers index.php et ajoute-moi un paramètre en GET qui contiendra l'URL appelée
+# Redirige moi vers index.php et ajoute-moi un paramï¿½tre en GET qui contiendra l'URL appelï¿½e
 RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]

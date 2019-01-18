@@ -4,7 +4,10 @@ namespace Portfolio\Controllers;
 
 use Portfolio\Controllers\CoreController;
 
-use Portfolio\Models\DBData_Blog;
+use Portfolio\Utils\Database;
+
+use Portfolio\Models\BlogModel;
+
 
 class BlogController extends CoreController
 {
@@ -12,7 +15,7 @@ class BlogController extends CoreController
     {
         $postId = $parameters['id'];
 
-        $dbData = new DBData_Blog;
+        $dbData = new BlogModel;
 
         $post = $dbData->getPost($postId);
         dump($postId);

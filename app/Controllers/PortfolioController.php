@@ -4,7 +4,9 @@ namespace Portfolio\Controllers;
 
 use Portfolio\Controllers\CoreController;
 
-use Portfolio\Models\DBData_Portfolio;
+use Portfolio\Utils\Database;
+
+use Portfolio\Models\PortfolioModel;
 
 class PortfolioController extends CoreController
 {
@@ -13,7 +15,7 @@ class PortfolioController extends CoreController
         $portfolioId = $parameters['id'];
    
 
-        $dbData = new DBData_Portfolio;
+        $dbData = new PortfolioModel;
 
         $portfolio = $dbData->getPortfolio($portfolioId);
         dump($portfolioId);
