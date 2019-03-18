@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\VoteRepository")
@@ -18,6 +19,7 @@ class Vote
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("recipes")
      */
     private $note;
 

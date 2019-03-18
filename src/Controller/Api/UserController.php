@@ -4,16 +4,26 @@ namespace App\Controller\Api;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\UserRepository;
 
 class UserController extends AbstractController
 {
     /**
-     * @Route("/api/user", name="api_user")
-     */
-    public function index()
+    * @Route("/user", name="user")
+    */
+    public function fav(UserRepository $repo)
     {
-        return $this->render('api/user/index.html.twig', [
-            'controller_name' => 'UserController',
-        ]);
+        $user = $repo->find(1);
+        $favoris = $user->getFavoris();
+
+        $Userfavoris = [''];
+
+        foreach($favoris as $favori) {
+        $Userfavoris = $favori ;
+        }
+
+        header('Access-Control-Allow-Origin: *');
+
+        return $this->json($Userfavoris);
     }
 }

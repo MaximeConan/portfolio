@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommentRepository")
@@ -18,11 +19,13 @@ class Comment
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("recipes")
      */
     private $body;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups("recipes")
      */
     private $createdAt;
 

@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RecipeRepository")
@@ -20,36 +21,43 @@ class Recipe
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("recipes")
      */
     private $title;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("recipes")
      */
     private $calorie;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("recipes")
      */
     private $slug;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("recipes")
      */
     private $difficulty;
 
     /**
      * @ORM\Column(type="string")
+     * @Groups("recipes")
      */
     private $time;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("recipes")
      */
     private $picture;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups("recipes")
      */
     private $created_at;
 
@@ -60,22 +68,26 @@ class Recipe
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups("recipes")
      */
     private $validated;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Etape", mappedBy="recipe", orphanRemoval=true)
+     * @Groups("recipes")
      */
     private $etapes;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Type", inversedBy="recipes")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups("recipes")
      */
     private $type;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\RecipeIngredient", mappedBy="recipe", orphanRemoval=true)
+     * @Groups("recipes")
      */
     private $recipeIngredients;
 
@@ -83,6 +95,7 @@ class Recipe
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="recipe")
+     * @Groups("recipes")
      */
     private $comments;
 
@@ -93,12 +106,14 @@ class Recipe
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Vote", mappedBy="recipe", orphanRemoval=true)
+     * @Groups("recipes")
      */
     private $votes;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="recipes", cascade="remove")
      * @ORM\JoinColumn(nullable=true)
+     * @Groups("recipes")
      */
     private $user;
 

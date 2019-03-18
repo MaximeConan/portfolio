@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EtapeRepository")
@@ -18,11 +19,13 @@ class Etape
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"recipes"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("recipes")
      */
     private $etapeOrder;
 
