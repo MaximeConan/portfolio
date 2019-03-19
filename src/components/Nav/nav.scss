@@ -1,0 +1,29 @@
+@import 'src/styles/vars';
+
+.nav {
+  padding: 1em 0;
+  border-bottom: 1px solid #cecece !important;
+}
+
+#nav-button--calendar, #nav-button--log {
+  color: #FFF;
+  font-weight: bold;
+}
+
+#nav-button--calendar {
+  background-color: $green;
+  transition: all .3;
+
+  &:hover {
+    background-color: $green-dark;
+  }
+}
+
+#nav-button--log {
+  background-color: $blue;
+  transition: all .3;
+
+  &:hover {
+    background-color: $blue-dark;
+  }
+}
