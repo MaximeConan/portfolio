@@ -1,0 +1,138 @@
+@import 'src/styles/vars';
+
+.sidebar {
+  background-color: #eef4fb;
+  padding: 2em;
+  min-height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+  & i {
+    color: #f5b217;
+    padding-right: .5em;
+  }
+
+  &-filter, h2 {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #97c6dc;
+
+    &:last-child {
+       border-bottom: none;
+    }
+
+    & p {
+      font-weight: bold;
+      color: $blue;
+    }
+  }
+}
+
+.content {
+  padding: 2em;
+
+  h2 {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #97c6dc;
+  }
+
+  & i {
+    color: #f5b217;
+    padding-right: .5em;
+  }
+}
+.recipe-item {
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  position: relative;
+  transition: all .3s;
+
+  &:hover {
+    box-shadow: 1px 2px 5px #cecece;
+  }
+
+  &-middle {
+    min-height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 3px 3px 0px 0px;
+    padding-bottom: 1em;
+  }
+
+  h3 {
+    margin: 0 ;
+  }
+
+  &-calories {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: $green;
+    padding: .5em 1em;
+    color: #FFF;
+    border-radius: 3px;
+  }
+
+  &-title, &-note {
+    text-align: center;
+  }
+
+  &-actions {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #cecece;
+
+    & div {
+      padding: 1em;
+      flex: 1;
+      transition: all .3s;
+
+      &:hover {
+        background-color: #eef4fb;
+      }
+
+    & i {
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+    }
+
+      &:first-child {
+        border-right: 1px solid #cecece;
+      }
+    }
+  }
+}
+
+.recipe-item-actions--fav i {
+  color: $red;
+}
+
+.recipe-item-actions--schedule i {
+  color: $blue;
+}
+
+.slick-prev:before, .slick-next:before {
+  color : $blue;
+}
+
+.slick-slide .recipe-item {
+  margin: 1em;
+  opacity: .5;
+}
+
+.slick-active .recipe-item {
+  opacity: 1;
+}
+
+.slick-track {
+  padding-bottom: 2em;
+}
