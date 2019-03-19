@@ -12,28 +12,26 @@ import Instructions from './Instructions'
 import Comments from './Comments/index'
 
 // Code
-const Recipe = ({ recipes }) => (
-  console.log(recipes),
-  recipes.map(recipe => (
-    <Container>
-      <div className="recipe-content">
-        <HeroSectionRecipe title={recipe.title} picture={recipe.picture} />
-        <DetailsBar />
-        <Grid>
-          <Grid.Row columns={2}>
-            <Grid.Column>
-              <Ingredients ingredients={recipe.recipeIngredients} />
-            </Grid.Column>
-            <Grid.Column>
-              <Time calories={recipe.calorie} time={recipe.time} difficulty={recipe.difficulty} />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-        <Instructions etapes={recipe.etapes} />
-        <Comments />
-      </div>
-    </Container>
-  ))
+const Recipe = ({ recipe }) => (
+  console.log(recipe),
+  <Container>
+    <div className="recipe-content">
+      <HeroSectionRecipe title={recipe.title} picture={recipe.picture} />
+      <DetailsBar />
+      <Grid>
+        <Grid.Row columns={2}>
+          <Grid.Column>
+            <Ingredients ingredients={recipe.recipeIngredients} />
+          </Grid.Column>
+          <Grid.Column>
+            <Time calories={recipe.calorie} time={recipe.time} difficulty={recipe.difficulty} />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+      <Instructions etapes={recipe.etapes} />
+      <Comments />
+    </div>
+  </Container>
 )
 
 // Export
