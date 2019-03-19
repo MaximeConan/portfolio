@@ -1,0 +1,100 @@
+@import 'src/styles/vars';
+
+.details-bar {
+  background-color: #f9f9F9;
+  padding: 2em;
+  margin-bottom: 2em;
+
+  &-note {
+    border-right: 1px solid #cecece;
+
+    & i {
+      color: #f5b217;
+      padding-right: .5em;
+    }
+  }
+
+  &-person {
+    border-right: 1px solid #cecece;
+
+    & i {
+      color: $green;
+    }
+
+    & span {
+      padding: 0 .5em;
+    }
+  }
+
+  &-schedule {
+    border-right: 1px solid #cecece;
+
+    & i {
+      padding-right: .5em;
+      color: $green;
+    }
+  }
+
+  &-favorite {
+
+    & i {
+      padding-right: .5em;
+      color: $red;
+    }
+  }
+}
+
+.ingredients {
+  margin-bottom: 2em;
+
+  &-details {
+
+    & li:before {
+      content:"\f2e7";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: $blue;
+      padding-right: .5em;
+    }
+  }
+}
+
+.comments {
+
+  &-grid {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  &-profil {
+    &-picture {
+      background-color: #cecece;
+      width: 80px;
+      height: 80px;
+      border-radius: 100px;
+      padding: 34px;
+      box-shadow: 1px 10px 20px #cecece;
+      display: block;
+      margin: 0 auto;
+    }
+
+    &-name {
+      text-align: center;
+      margin-top: 1em;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: $blue;
+    }
+  }
+
+  &-content {
+
+    & p {
+      background-color: $green-light;
+      color: $green;
+      border: 1px solid $green;
+      border-radius: 5px;
+      padding: 2em;
+    }
+  }
+}
