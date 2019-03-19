@@ -8,7 +8,7 @@ import HeroSectionRecipe from './HeroSectionRecipe'
 import DetailsBar from './DetailsBar'
 import Ingredients from './Ingredients'
 import Instructions from './Instructions'
-import Comments from './Comments'
+import Comments from './Comments/index'
 
 // Code
 const Recipe = () => (
