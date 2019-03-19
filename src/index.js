@@ -1,17 +1,19 @@
 /**
  * NPM import
  */
-import '@babel/polyfill';
-import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
+import '@babel/polyfill'
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import 'semantic-ui-css/semantic.min.css'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 /**
  * Local import
  */
-import App from 'src/components/App';
+import App from 'src/components/App'
 
-import store from 'src/store';
+import store from 'src/store'
 
 /**
  * Render
@@ -19,11 +21,13 @@ import store from 'src/store';
 // 1. Le composant racine à rendre (le tronc de l'arbre)
 const rootComponent = (
   <Provider store={store}>
-    <App />
+    <Router>
+      <Route component={App} />
+    </Router>
   </Provider>
-);
+)
 // 2. La cible dans le DOM
-const target = document.getElementById('root');
+const target = document.getElementById('root')
 
 // rendu de react-dom : react VERS dom
-render(rootComponent, target);
+render(rootComponent, target)
