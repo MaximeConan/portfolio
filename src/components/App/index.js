@@ -24,7 +24,7 @@ const App = () => (
     <Nav />
     <Route path="/agenda" component={Calendar} />
     <Route path="/recettes" component={Recipes} />
-    <Route path="/single-recettes" component={Recipe} />
+    <Route path="/recette/:slug" component={Recipe} />
     <Footer />
     <Copyright />
   </div>

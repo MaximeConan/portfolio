@@ -5,10 +5,15 @@ import React from 'react'
 import './recipe.scss'
 
 // Code
-const Ingredients = () => (
+const Ingredients = ({ ingredients }) => (
   <div className="ingredients-details">
     <h2>Ingrédients</h2>
     <ul>
+      {/* {
+        ingredients.map(ingredient => (
+          <li>{ingredient.quantity} {ingredient.ingredient.name}</li>
+        ))
+      } */}
       <li>2 poireaux</li>
       <li>500g de langoustines</li>
       <li>3 cuillères à café de curry</li>
