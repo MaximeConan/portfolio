@@ -15,7 +15,7 @@ import './shoppingList.scss';
 
 // Code
 const ShoppingList = () => (
-  <Fragment>
+  <Container fluid>
     <HeroSection />
     <Container>
       <Grid>
@@ -172,7 +172,7 @@ const ShoppingList = () => (
         </Grid.Row>
       </Grid>
     </Container>
-  </Fragment>
+  </Container>
 );
 
 // Export
