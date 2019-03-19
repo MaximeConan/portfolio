@@ -23,6 +23,7 @@ class Nav extends React.Component {
             <Menu.Item name="Accueil" active={activeItem === 'Accueil'} onClick={this.handleItemClick} />
             <Menu.Item
               as={NavLink}
+              exact
               to="/recettes"
               name="Les recettes"
               active={activeItem === 'Les recettes'}

@@ -2,7 +2,10 @@
  * NPM import
  */
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+
+// Data import
+import recipesData from 'src/data/recipes'
 
 /**
  * Local import
@@ -22,9 +25,11 @@ import Copyright from 'src/components/Copyright'
 const App = () => (
   <div id="app">
     <Nav />
-    <Route path="/agenda" component={Calendar} />
-    <Route path="/recettes" component={Recipes} />
-    <Route path="/recette/:slug" component={Recipe} />
+    <Switch>
+      <Route exact path="/agenda" component={Calendar} />
+      <Route exact path="/recettes" component={Recipes} />
+      <Route exact path="/recettes/:slug" render={() => <Recipe recipes={recipesData} />} />
+    </Switch>
     <Footer />
     <Copyright />
   </div>

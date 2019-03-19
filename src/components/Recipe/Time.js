@@ -6,14 +6,14 @@ import { Grid } from 'semantic-ui-react'
 import './recipe.scss'
 
 // Code
-const Time = () => (
+const Time = ({ time, calories, difficulty }) => (
   <div className="time">
     <Grid>
       <Grid.Row columns={1}>
         <h2>Préparation & autres</h2>
         <div className="time-details">
           <i className="fas fa-clock" />
-          <p><strong>Total :</strong> 25 min</p>
+          <p><strong>Total :</strong> {time}</p>
         </div>
         <div className="time-details">
           <i className="fas fa-user-clock" />
@@ -21,11 +21,11 @@ const Time = () => (
         </div>
         <div className="time-details">
           <i className="fas fa-fire" />
-          <p><strong>Cuisson :</strong> 10 min</p>
+          <p><strong>Difficulté :</strong> {difficulty} / 3</p>
         </div>
         <div className="time-details--calories">
           <i className="fas fa-weight" />
-          <p><strong>Calories :</strong> 417</p>
+          <p><strong>Calories :</strong> {calories}</p>
         </div>
       </Grid.Row>
     </Grid>

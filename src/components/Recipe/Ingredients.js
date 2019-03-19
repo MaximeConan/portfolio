@@ -9,18 +9,11 @@ const Ingredients = ({ ingredients }) => (
   <div className="ingredients-details">
     <h2>Ingrédients</h2>
     <ul>
-      {/* {
+      {
         ingredients.map(ingredient => (
           <li>{ingredient.quantity} {ingredient.ingredient.name}</li>
         ))
-      } */}
-      <li>2 poireaux</li>
-      <li>500g de langoustines</li>
-      <li>3 cuillères à café de curry</li>
-      <li>1 salade au choix</li>
-      <li>1 yaourt à la grec</li>
-      <li>1 chou</li>
-      <li>2 cuillères à soupe d'huile d'olive</li>
+      }
     </ul>
   </div>
 )

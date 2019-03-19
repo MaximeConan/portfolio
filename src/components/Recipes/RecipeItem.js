@@ -9,7 +9,7 @@ import './recipes.scss'
 
 // Code
 const RecipeItem = ({ hit }) => (
-  <Link to={`/recette/${hit.slug}`} exact>
+  <Link exact to={`/recettes/${hit.slug}`}>
     <div className="recipe-item">
       <img src={hit.picture} alt="img-recette" />
       <div className="recipe-item-details">

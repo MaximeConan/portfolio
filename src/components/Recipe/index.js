@@ -2,9 +2,6 @@
 import React from 'react'
 import { Container, Grid } from 'semantic-ui-react'
 
-// Data import
-import recipesData from 'src/data/recipes'
-
 // Local import
 import './recipe.scss'
 import HeroSectionRecipe from './HeroSectionRecipe'
@@ -15,29 +12,29 @@ import Instructions from './Instructions'
 import Comments from './Comments/index'
 
 // Code
-const Recipe = () => {
-  console.log(recipesData)
-  return (
+const Recipe = ({ recipes }) => (
+  console.log(recipes),
+  recipes.map(recipe => (
     <Container>
       <div className="recipe-content">
-        <HeroSectionRecipe />
+        <HeroSectionRecipe title={recipe.title} picture={recipe.picture} />
         <DetailsBar />
         <Grid>
           <Grid.Row columns={2}>
             <Grid.Column>
-              <Ingredients />
+              <Ingredients ingredients={recipe.recipeIngredients} />
             </Grid.Column>
             <Grid.Column>
-              <Time />
+              <Time calories={recipe.calorie} time={recipe.time} difficulty={recipe.difficulty} />
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        <Instructions />
+        <Instructions etapes={recipe.etapes} />
         <Comments />
       </div>
     </Container>
-  )
-}
+  ))
+)
 
 // Export
 export default Recipe
