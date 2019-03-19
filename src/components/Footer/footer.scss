@@ -1,0 +1,21 @@
+@import 'src/styles/vars';
+
+.footer {
+  background-color: #f9f9f9;
+  padding: 2em;
+
+  & h3 {
+    color: $blue;
+  }
+  
+  &-social-media i {
+    color: $green;
+    font-size: 2em;
+    padding-right: 0.5em;
+    transition: all .3;
+
+    &:hover {
+      color: $green-dark;
+    }
+  }
+}
