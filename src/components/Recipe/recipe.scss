@@ -1,5 +1,15 @@
 @import 'src/styles/vars';
 
+.recipe-content {
+
+  & h2 {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #97c6dc;
+    width: 100%;
+  }
+}
+
 .details-bar {
   background-color: #f9f9F9;
   padding: 2em;
@@ -55,6 +65,62 @@
       font-weight: 900;
       color: $blue;
       padding-right: .5em;
+    }
+  }
+}
+
+.instructions {
+  & li {
+    padding: 1em 0;
+    border-bottom: 1px solid #cecece;
+    display: flex;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    & span {
+      font-weight: bold;
+      font-size: 2em;
+      margin-right: .5em;  
+      color: $green;
+
+      &:before {
+        content: "";
+        background-color: #cecece;
+      }
+    }
+  }
+}
+
+.time {
+
+  &-details, &-details--calories {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #343890;
+    padding: 1em;
+    border-radius: 5px;
+    color: #FFF;
+    margin-bottom: .5em;
+
+    & i {
+      border-right: 1px solid $blue-dark;
+      padding-right: .5em;
+      margin-right: .5em;
+    }
+
+    & p {
+      color: #FFF;
+    }
+  }
+
+  &-details--calories {
+    background-color: $green;
+
+    & i {
+      border-right: 1px solid $green-dark;
     }
   }
 }
