@@ -1,0 +1,94 @@
+@import 'src/styles/vars';
+
+.recipe {
+  background-color: $blue-light;
+  color: $blue !important;
+  font-weight: bold;
+  border: 1px solid $blue !important;
+
+  &-icon {
+    font-size: 1.2em;
+    padding: .5em;
+
+    & i {
+      padding: 0 .5em;
+
+      &:first-child {
+        border-right: 1px solid;
+      }
+    }
+  }
+}
+
+.calendar {
+  width: 100% !important;
+  margin: 80px auto !important;
+  box-shadow: 1px 20px 30px #cecece !important;
+
+
+  &-cell-add--meal {
+    border: 1px dashed #acacac;
+    padding: .5em;
+    color: #acacac;
+    border-radius: 5px;
+    font-size: .8em;
+    height: 120px;
+    width: 100%;
+    max-width: 60px;
+    min-width: 100%;
+    display: flex;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .3s;
+
+    &:hover {
+      background-color: $blue-light;
+      border-color: $blue;
+    }
+
+    & span {
+      display: block;
+      margin: auto;
+      align-self: center;
+    }
+
+    &:hover span {
+      display: none;
+    }
+
+    &:hover:before {
+      display: block;
+      transition: all .3s;
+      width: 100%;
+    }
+
+    &:before {
+      content: "\f055";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 30px;
+      color: $blue;
+      display: none;
+      align-self: center;
+      margin: auto;
+    }
+  }
+
+  &-footer-button {
+    width: 100%;
+    display: block;
+    background-color: $green;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 1em;
+    font-weight: bold;
+    font-size: 1.5em;
+    transition: all .3s;
+
+    &:hover {
+      color: #FFF;
+      background-color: $green-dark;
+    }
+  }
+}
