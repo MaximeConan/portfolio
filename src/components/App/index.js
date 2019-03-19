@@ -10,6 +10,7 @@ import { Route } from 'react-router-dom'
 import './app.scss'
 import Nav from 'src/components/Nav'
 import Calendar from 'src/components/Calendar'
+import ShoppingList from 'src/components/ShoppingList';
 import Recipes from 'src/components/Recipes'
 import Recipe from 'src/components/Recipe'
 import Footer from 'src/components/Footer'
@@ -24,6 +25,7 @@ const App = () => (
     <Nav />
     <Route path="/agenda" component={Calendar} />
     <Route path="/recettes" component={Recipes} />
+    <Route path="/shoppingList" component={ShoppingList} />
     <Route path="/single-recettes" component={Recipe} />
     <Footer />
     <Copyright />
