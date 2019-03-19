@@ -1,0 +1,20 @@
+@import 'src/styles/vars';
+
+.copyright {
+  background-color: $blue;
+  color: #FFF;
+  text-align: center;
+  padding: 1em;
+
+  & a, i {
+    color: $green;
+  }
+
+  & a:hover {
+    color: $green-dark !important;
+  }
+
+  & i {
+    padding: 0 .5em;
+  }
+}
