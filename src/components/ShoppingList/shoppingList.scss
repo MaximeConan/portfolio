@@ -1,0 +1,62 @@
+@import 'src/styles/vars';
+
+
+
+.shoppingList {
+  max-height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 50px auto;
+  border-radius: 5px;
+  box-shadow: 1px 20px 30px #cecece !important;
+
+  &-column {
+    flex-wrap: wrap;
+    width: 19%;
+    margin: 0.5%;
+  }
+
+  &-title {
+  background-color: $green;
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.3em;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px;
+  }
+  
+  &-cell {
+    border: 1px dashed #acacac;
+    padding: .5em;
+    color: #acacac;
+    border-radius: 5px;
+    font-size: .8em;
+    height: auto;
+    width: 100%;
+    max-width: 60px;
+    min-width: 100%;
+    display: flex;
+    align-self: flex-start;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+}
+  &-footer-button {
+    width: 78vw;
+    display: block;
+    background-color: $green;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 1em;
+    font-weight: bold;
+    font-size: 1.5em;
+    transition: all .3s;
+    text-align: center;
+    margin: 10px 1%;
+  }
+}
