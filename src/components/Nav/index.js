@@ -15,6 +15,20 @@ class Nav extends React.Component {
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  handleClick = () => {
+    const { isLogged } = this.state
+
+    if (isLogged) {
+      this.setState({
+        isLogged: false,
+      })
+    } else {
+      this.setState({
+        isLogged: true,
+      })
+    }
+  }
+
   render() {
     const { activeItem } = this.state
     const { isLogged } = this.state
@@ -30,13 +44,6 @@ class Nav extends React.Component {
               to="/recettes"
               name="Les recettes"
               active={activeItem === 'Les recettes'}
-              onClick={this.handleItemClick}
-            />
-            <Menu.Item
-              as={NavLink}
-              to="/single-recettes"
-              name="Une recette"
-              active={activeItem === 'Une recette'}
               onClick={this.handleItemClick}
             />
             <Menu.Item
@@ -59,22 +66,26 @@ class Nav extends React.Component {
 
             {
               isLogged
-                ? <Fragment>
+                ? (
+                  <Fragment>
                     <Menu.Item>
-                        <Button id="nav-button--log">Mon compte</Button>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <Button id="nav-button--log">Se déconnecter</Button>
+                      <Button id="nav-button--log">Mon compte</Button>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <Button id="nav-button--log" onClick={this.handleClick}>Se déconnecter</Button>
                     </Menu.Item>
                   </Fragment>
-                : <Fragment>
+                )
+                : (
+                  <Fragment>
                     <Menu.Item>
-                        <Button id="nav-button--log">Se connecter</Button>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <Button id="nav-button--log">S'inscrire</Button>
-                      </Menu.Item>
-                </Fragment>
+                      <Button id="nav-button--log">S'inscrire</Button>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <Button id="nav-button--log" onClick={this.handleClick}>Se connecter</Button>
+                    </Menu.Item>
+                  </Fragment>
+                )
             }
 
            
