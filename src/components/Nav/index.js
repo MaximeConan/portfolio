@@ -22,10 +22,12 @@ class Nav extends React.Component {
           <Menu.Menu position="right">
             <Menu.Item
               as={NavLink}
-              exact to="/"
+              exact
+              to="/"
               name="Accueil"
               active={activeItem === 'Accueil'}
-              onClick={this.handleItemClick} />
+              onClick={this.handleItemClick}
+            />
             <Menu.Item
               as={NavLink}
               exact
