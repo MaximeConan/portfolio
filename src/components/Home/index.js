@@ -6,6 +6,7 @@ import axios from 'axios'
 // Local import
 import './home.scss'
 import Field from './Field'
+import SignIn from './SignIn'
 
 const fields = [
   {
@@ -67,7 +68,7 @@ class Home extends React.Component {
         },
       })
         .then((response) => {
-          console.log(response)
+          console.log('Réponse post - signup : ', response)
           this.setState({
             username,
             email,
@@ -90,13 +91,13 @@ class Home extends React.Component {
 
     return (
       <Container>
+        <SignIn />
         <div>
           {
-            errors ? errors.map(error => <div>{error}</div>) : <div>Tableau errors vide</div>
+            errors ? errors.map((error, index) => <div key={index}>{error}</div>) : null
           }
-          {/* errors ? errors.forEach(error => console.log(error)) : <div>Hello</div> */}
         </div>
-        <form id="app" autoComplete="off" onSubmit={this.handleSubmit}>
+        <form id="signup" autoComplete="off" onSubmit={this.handleSubmit}>
           {fields.map(field => (
             <Field
               required

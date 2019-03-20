@@ -1,16 +1,11 @@
 // NPM import
 import React from 'react'
-import {
-  Container,
-  Button,
-  Form,
-  Grid,
-} from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 import axios from 'axios'
 
 // Local import
-import '../account-form.scss'
-import Field from '../Field'
+import './home.scss'
+import Field from './Field'
 
 const fields = [
   {
@@ -80,33 +75,24 @@ class SignIn extends React.Component {
     const { errors } = this.state
 
     return (
-      <Container fluid className="background-image" textAlign="center">
-        <Grid.Column className="content">
-          <div className="content-text">
-            <h1>Pour vous connecter, veuillez remplir les champs suivants :</h1>
-          </div>
-          <ul>
-            {
-              errors ? errors.map((error, index) => <li key={index}>{error}</li>) : null
-            }
-          </ul>
-          <Form className="field" onSubmit={this.handleSubmit}>
-            {fields.map(field => (
-              <Form.Field required>
-                <label className="field-label">{field.name}</label>
-                <Field
-                  required
-                  className="field-input"
-                  key={field.name}
-                  value={this.state[field.name]}
-                  onInputChange={this.inputChange}
-                  {...field}
-                />
-              </Form.Field>
-            ))}
-            <Button className="field-button-submit" type="submit">Connexion</Button>
-          </Form>
-        </Grid.Column>
+      <Container>
+        <div>
+          {
+            errors ? errors.map((error, index) => <div key={index}>{error}</div>) : null
+          }
+        </div>
+        <form id="signin" autoComplete="off" onSubmit={this.handleSubmit}>
+          {fields.map(field => (
+            <Field
+              required
+              key={field.name}
+              value={this.state[field.name]}
+              onInputChange={this.inputChange}
+              {...field}
+            />
+          ))}
+          <button type="submit">Envoyer</button>
+        </form>
       </Container>
     )
   }
