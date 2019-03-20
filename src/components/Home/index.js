@@ -9,7 +9,7 @@ import Field from './Field'
 
 const fields = [
   {
-    name: 'fullname',
+    name: 'username',
     placeholder: 'Pseudo',
   },
   {
@@ -49,20 +49,29 @@ class Home extends React.Component {
       password,
       confirmPassword,
       email,
-      fullname,
+      username,
     } = this.state
 
+    const data = {
+      username,
+      email,
+      password,
+    }
+
     if (password === confirmPassword) {
-      axios.post('/http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public/registration', {
-        fullname: fullname,
-        email: email,
-        password: password,
+      axios({
+        method: 'post',
+        url: 'http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public/registration',
+        data,
+        headers: {
+          'Content-Type': 'multipart/form-data; charset=UTF-8',
+        },
       })
         .then((response) => {
-          console.log(response);
+          console.log(response)
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error)
         })
     } else {
       alert('Passwords not match')
