@@ -41,6 +41,13 @@ class Nav extends React.Component {
               active={activeItem === 'Le blog'}
               onClick={this.handleItemClick}
             />
+            <Menu.Item
+              as={NavLink}
+              to="/shoppingList"
+              name="Ma liste de courses"
+              active={activeItem === 'Ma Liste De Courses'}
+              onClick={this.handleItemClick}
+            />
             <Menu.Item as={NavLink} to="/agenda">
               <Button id="nav-button--calendar">Mon agenda</Button>
             </Menu.Item>
