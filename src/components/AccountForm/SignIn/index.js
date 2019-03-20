@@ -23,7 +23,7 @@ import '../account-form.scss'
 // Code
 const SignIn = () => (
   <Container fluid>
-    <HeroSectionAccount />
+    {/* <HeroSectionAccount /> */}
     <Container>
       <Form className="field">
         <Form.Field required

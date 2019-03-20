@@ -6,6 +6,7 @@ import {
   Container,
   Button,
   Form,
+  Grid,
 } from 'semantic-ui-react'
 // import classNames from 'classnames'
 
@@ -22,29 +23,32 @@ import '../account-form.scss'
 
 // Code
 const SignUp = () => (
-  <Container>
-    <HeroSectionAccount />
-    <Form className="field">
-    <Button circular icon='man' />
-    <Button circular icon='woman' />
-      <Form.Field required>
-        <label className="field-label" htmlFor="">Pseudo</label>
-        <input className="field-input" type="text" />
-      </Form.Field>
-      <Form.Field required>
-        <label className="field-label" htmlFor="">Votre email</label>
-        <input className="field-input" type="mail" />
-      </Form.Field>
-      <Form.Field required>
-        <label className="field-label" htmlFor="">Mot de passe</label>
-        <input className="field-input" type="password" />
-      </Form.Field>
-      <Form.Field required>
-        <label className="field-label" htmlFor="">Confirmez votre mot de passe</label>
-        <input className="field-input" type="password" />
-      </Form.Field>
-      <Button className="field-button-submit" type="submit">S'inscrire</Button>
-    </Form>
+  <Container fluid>
+    <Grid>
+      <HeroSectionAccount />
+      <Form className="field">
+        <h2>Vous êtes ?</h2>
+        <Button circular className="field-gender-button-images"><img src="src/images/employee.svg" alt=""/></Button>
+        <Button circular className="field-gender-button-images"><img src="src/images/woman.svg" alt=""/></Button>
+        <Form.Field required>
+          <label className="field-label" htmlFor="">Pseudo</label>
+          <input className="field-input" type="text" />
+        </Form.Field>
+        <Form.Field required>
+          <label className="field-label" htmlFor="">Votre email</label>
+          <input className="field-input" type="mail" />
+        </Form.Field>
+        <Form.Field required>
+          <label className="field-label" htmlFor="">Mot de passe</label>
+          <input className="field-input" type="password" />
+        </Form.Field>
+        <Form.Field required>
+          <label className="field-label" htmlFor="">Confirmez votre mot de passe</label>
+          <input className="field-input" type="password" />
+        </Form.Field>
+        <Button className="field-button-submit" type="submit">S'inscrire</Button>
+      </Form>
+    </Grid>
   </Container>
 )
 

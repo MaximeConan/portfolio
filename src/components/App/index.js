@@ -31,7 +31,7 @@ const App = () => (
     <Route path="/recettes" component={Recipes} />
     <Route path="/shoppingList" component={ShoppingList} />
     <Route path="/single-recettes" component={Recipe} />
-    <SignIn />
+    {/* <SignIn /> */}
     <SignUp />
     <Footer />
     <Copyright />

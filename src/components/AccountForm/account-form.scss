@@ -4,6 +4,12 @@
   margin: .5em auto;
   position: relative;
   width: 400px;
+
+  &-gender-button-images
+  {
+    width: 100px;
+    height: 100px;
+  }
   
   &-input {
     font-size: 1.2em;
