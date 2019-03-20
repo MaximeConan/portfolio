@@ -14,7 +14,7 @@ import {
 */
 
 // Import(s) du/des component(s)
-import HeroSection from 'src/components/Calendar/HeroSectionCalendar'
+import HeroSectionAccount from 'src/components/AccountForm/Account/HeroSectionAccount/index'
 
 // Style SCSS
 import '../account-form.scss'
@@ -23,6 +23,7 @@ import '../account-form.scss'
 // Code
 const SignUp = () => (
   <Container>
+    <HeroSectionAccount />
     <Form className="field">
     <Button circular icon='man' />
     <Button circular icon='woman' />
