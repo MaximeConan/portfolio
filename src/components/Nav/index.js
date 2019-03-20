@@ -20,7 +20,7 @@ class Nav extends React.Component {
         <Menu secondary className="nav">
           <h1>[Brand]</h1>
           <Menu.Menu position="right">
-            <Menu.Item name="Accueil" active={activeItem === 'Accueil'} onClick={this.handleItemClick} />
+            <Menu.Item as={NavLink} exact to="/" name="Accueil" active={activeItem === 'Accueil'} onClick={this.handleItemClick} />
             <Menu.Item
               as={NavLink}
               exact
@@ -43,7 +43,7 @@ class Nav extends React.Component {
             />
             <Menu.Item
               as={NavLink}
-              to="/shoppingList"
+              to="/shopping-list"
               name="Ma liste de courses"
               active={activeItem === 'Ma Liste De Courses'}
               onClick={this.handleItemClick}

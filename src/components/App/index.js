@@ -12,14 +12,13 @@ import recipes from 'src/data/recipes'
  */
 import './app.scss'
 import Nav from 'src/components/Nav'
+import Home from 'src/components/Home'
 import Calendar from 'src/components/Calendar'
 import ShoppingList from 'src/components/ShoppingList'
 import Recipes from 'src/components/Recipes'
 import Recipe from 'src/components/Recipe'
 import Footer from 'src/components/Footer'
 import Copyright from 'src/components/Copyright'
-
-import data from 'src/data/recipes'
 
 /**
  * Code
@@ -29,6 +28,7 @@ const App = () => (
   <div id="app">
     <Nav />
     <Switch>
+      <Route exact path="/" component={Home} />
       <Route exact path="/agenda" component={Calendar} />
       <Route exact path="/recettes" component={Recipes} />
       <Route
@@ -46,6 +46,7 @@ const App = () => (
           return <Redirect to="/not-found" />
         }}
       />
+      <Route exact path="/shopping-list" component={ShoppingList} />
     </Switch>
     <Footer />
     <Copyright />
