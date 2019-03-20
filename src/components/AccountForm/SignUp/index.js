@@ -121,7 +121,7 @@ class SignUp extends React.Component {
             ))}
             <ul>
               {
-                errors ? errors.map((error, index) => <li key={index}>{error}</li>) : null
+                errors ? errors.map((error, index) => <li className="form-message--error" key={index}>{error}</li>) : null
               }
             </ul>
             <Button className="field-button-submit" type="submit">Connexion</Button>
