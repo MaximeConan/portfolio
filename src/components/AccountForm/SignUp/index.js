@@ -15,7 +15,6 @@ import {
 */
 
 // Import(s) du/des component(s)
-import HeroSectionAccount from 'src/components/AccountForm/Account/HeroSectionAccount/index'
 
 // Style SCSS
 import '../account-form.scss'
@@ -23,13 +22,17 @@ import '../account-form.scss'
 
 // Code
 const SignUp = () => (
-  <Container fluid>
-    <Grid>
-      <HeroSectionAccount />
+  <Container fluid className="background-image" textAlign="center">
+    <Grid.Column centered className="content">
+      <div className="content-text">
+        <h1>Pour vous Inscrire, veuillez remplir les champs suivants :</h1>
+      </div>
       <Form className="field">
-        <h2>Vous êtes ?</h2>
-        <Button circular className="field-gender-button-images"><img src="src/images/employee.svg" alt=""/></Button>
-        <Button circular className="field-gender-button-images"><img src="src/images/woman.svg" alt=""/></Button>
+        <h3 className="field-gender-text">Vous êtes ?</h3>
+        <div className="field-gender-button-images">
+          <Button circular className="field-gender-button-image"><img src="src/images/employee.svg" alt=""/></Button>
+          <Button circular className="field-gender-button-image"><img src="src/images/woman.svg" alt=""/></Button>
+        </div>
         <Form.Field required>
           <label className="field-label" htmlFor="">Pseudo</label>
           <input className="field-input" type="text" />
@@ -48,7 +51,7 @@ const SignUp = () => (
         </Form.Field>
         <Button className="field-button-submit" type="submit">S'inscrire</Button>
       </Form>
-    </Grid>
+    </Grid.Column>
   </Container>
 )
 

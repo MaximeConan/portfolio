@@ -20,7 +20,12 @@ class Nav extends React.Component {
         <Menu secondary className="nav">
           <h1>[Brand]</h1>
           <Menu.Menu position="right">
-            <Menu.Item as={NavLink} exact to="/" name="Accueil" active={activeItem === 'Accueil'} onClick={this.handleItemClick} />
+            <Menu.Item
+              as={NavLink}
+              exact to="/"
+              name="Accueil"
+              active={activeItem === 'Accueil'}
+              onClick={this.handleItemClick} />
             <Menu.Item
               as={NavLink}
               exact

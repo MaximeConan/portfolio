@@ -6,6 +6,7 @@ import {
   Container,
   Button,
   Form,
+  Grid,
 } from 'semantic-ui-react'
 // import classNames from 'classnames'
 
@@ -13,18 +14,17 @@ import {
 * local import
 */
 
-// Import(s) du/des component(s)
-import HeroSectionAccount from 'src/components/AccountForm/Account/HeroSectionAccount/index'
-
 // Style SCSS
 import '../account-form.scss'
 
 
 // Code
 const SignIn = () => (
-  <Container fluid>
-    {/* <HeroSectionAccount /> */}
-    <Container>
+  <Container fluid className="background-image" textAlign="center">
+    <Grid.Column centered className="content">
+      <div className="content-text">
+        <h1>Pour vous connecter, veuillez remplir les champs suivants :</h1>
+      </div>
       <Form className="field">
         <Form.Field required
         // Code pour dynamiser les champs en scss
@@ -44,7 +44,7 @@ const SignIn = () => (
         </Form.Field>
         <Button className="field-button-submit" type="submit">Connexion</Button>
       </Form>
-    </Container>
+    </Grid.Column>
   </Container>
 )
 
