@@ -1,5 +1,5 @@
 // NPM Import
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Menu, Button, Container } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
@@ -8,13 +8,16 @@ import './nav.scss'
 
 // Code
 class Nav extends React.Component {
-  state = { activeItem: 'home' }
+  state = {
+    activeItem: 'home',
+    isLogged: true,
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
     const { activeItem } = this.state
-
+    const { isLogged } = this.state
     return (
       <Container>
         <Menu secondary className="nav">
@@ -51,9 +54,30 @@ class Nav extends React.Component {
             <Menu.Item as={NavLink} to="/agenda">
               <Button id="nav-button--calendar">Mon agenda</Button>
             </Menu.Item>
-            <Menu.Item>
-              <Button id="nav-button--log">Se déconnecter</Button>
-            </Menu.Item>
+
+            {/* Navigation changements for sign in / sign up / login state */}
+
+            {
+              isLogged
+                ? <Fragment>
+                    <Menu.Item>
+                        <Button id="nav-button--log">Mon compte</Button>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Button id="nav-button--log">Se déconnecter</Button>
+                    </Menu.Item>
+                  </Fragment>
+                : <Fragment>
+                    <Menu.Item>
+                        <Button id="nav-button--log">Se connecter</Button>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Button id="nav-button--log">S'inscrire</Button>
+                      </Menu.Item>
+                </Fragment>
+            }
+
+           
           </Menu.Menu>
         </Menu>
       </Container>
