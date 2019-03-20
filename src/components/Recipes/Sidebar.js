@@ -1,6 +1,7 @@
 // NPM Import
 import React from 'react'
 import { Radio } from 'semantic-ui-react'
+import { NumericMenu, RefinementList, ClearRefinements } from 'react-instantsearch-dom'
 
 // Local import
 import './recipes.scss'
@@ -9,8 +10,26 @@ import './recipes.scss'
 const Sidebar = () => (
   <aside className="sidebar">
     <h2>Affinez :</h2>
+    <ClearRefinements
+      clearsQuery
+      translations={{
+        reset: 'Nettoyer les filtres',
+      }}
+    />
     <div className="sidebar-filter">
       <p>Calories</p>
+      <NumericMenu
+        attribute="calorie"
+        translations={{
+          all: 'Tout',
+        }}
+        items={[
+          { label: 'Tout' },
+          { label: '- de 300 calories', end: 300 },
+          { label: '0 à 600 calories', start: 301, end: 600 },
+          { label: '+ 600 calories', start: 601 },
+        ]}
+      />
       <ul>
         <li><Radio label="Tout" /></li>
         <li><Radio label="- de 300 calories" /></li>

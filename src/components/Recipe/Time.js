@@ -16,10 +16,6 @@ const Time = ({ time, calories, difficulty }) => (
           <p><strong>Total :</strong> {time}</p>
         </div>
         <div className="time-details">
-          <i className="fas fa-user-clock" />
-          <p><strong>Préparation :</strong> 15 min</p>
-        </div>
-        <div className="time-details">
           <i className="fas fa-fire" />
           <p><strong>Difficulté :</strong> {difficulty} / 3</p>
         </div>
