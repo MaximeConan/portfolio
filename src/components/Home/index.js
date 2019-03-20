@@ -68,6 +68,12 @@ class Home extends React.Component {
       })
         .then((response) => {
           console.log(response)
+          this.setState({
+            username,
+            email,
+            password,
+            errors: response.data.errors,
+          })
         })
         .catch((error) => {
           console.log(error)
@@ -80,8 +86,16 @@ class Home extends React.Component {
 
   // Render
   render() {
+    const { errors } = this.state
+
     return (
       <Container>
+        <div>
+          {
+            errors ? errors.map(error => <div>{error}</div>) : <div>Tableau errors vide</div>
+          }
+          {/* errors ? errors.forEach(error => console.log(error)) : <div>Hello</div> */}
+        </div>
         <form id="app" autoComplete="off" onSubmit={this.handleSubmit}>
           {fields.map(field => (
             <Field
