@@ -1,5 +1,15 @@
 @import 'src/styles/vars';
 
+.recipe-content {
+
+  & h2 {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #97c6dc;
+    width: 100%;
+  }
+}
+
 .details-bar {
   background-color: #f9f9F9;
   padding: 2em;
@@ -59,42 +69,59 @@
   }
 }
 
-.comments {
+.instructions {
+  & li {
+    padding: 1em 0;
+    border-bottom: 1px solid #cecece;
+    display: flex;
+    align-items: center;
 
-  &-grid {
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  &-profil {
-    &-picture {
-      background-color: #cecece;
-      width: 80px;
-      height: 80px;
-      border-radius: 100px;
-      padding: 34px;
-      box-shadow: 1px 10px 20px #cecece;
-      display: block;
-      margin: 0 auto;
+    &:last-child {
+      border-bottom: none;
     }
 
-    &-name {
-      text-align: center;
-      margin-top: 1em;
+    & span {
       font-weight: bold;
-      font-size: 1.2em;
-      color: $blue;
+      font-size: 2em;
+      margin-right: .5em;  
+      color: $green;
+
+      &:before {
+        content: "";
+        background-color: #cecece;
+      }
     }
   }
+}
 
-  &-content {
+.time {
+
+  &-details, &-details--calories {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #343890;
+    padding: 1em;
+    border-radius: 5px;
+    color: #FFF;
+    margin-bottom: .5em;
+
+    & i {
+      border-right: 1px solid $blue-dark;
+      padding-right: .5em;
+      margin-right: .5em;
+    }
 
     & p {
-      background-color: $green-light;
-      color: $green;
-      border: 1px solid $green;
-      border-radius: 5px;
-      padding: 2em;
+      color: #FFF;
+    }
+  }
+
+  &-details--calories {
+    background-color: $green;
+
+    & i {
+      border-right: 1px solid $green-dark;
     }
   }
 }

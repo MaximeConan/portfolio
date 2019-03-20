@@ -1,0 +1,50 @@
+@import 'src/styles/vars';
+
+.comments-row {
+
+  background-color: #f9f9f9;
+  margin-bottom: 2em;
+  box-shadow: $box-shadow;
+  border-radius: 5px;
+  padding: 2em !important;
+
+  &:last-child {
+    margin-bottom: 3em;
+  }
+
+  &--own {
+    background-color: $blue;
+    color: #FFF;
+
+    & div, p {
+      color: #FFF;
+    }
+  }
+}
+
+.comments {
+  &-grid {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  &-profil {
+    border-right: 1px solid;
+    
+    &-picture {
+      background-color: #cecece;
+      width: 80px;
+      height: 80px;
+      border-radius: 100px;
+      padding: 34px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    &-name {
+      font-weight: bold;
+      margin-bottom: .5em;
+      color: $blue;
+    }
+  }
+}
