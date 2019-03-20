@@ -1,17 +1,21 @@
 /**
 * NPM import
 */
-import React, { Fragment } from 'react';
-import { Grid, Container } from 'semantic-ui-react';
+import React from 'react'
+import { Grid, Container } from 'semantic-ui-react'
 /**
 * local import
 */
 
 // Import(s) du/des component(s)
-import HeroSection from 'src/components/Calendar/HeroSection';
+import HeroSection from 'src/components/Calendar/HeroSectionCalendar'
+// import ShoppingListItems from 'src/components/ShoppingList/ShoppingListItems/index'
 
 // Style SCSS
-import './shoppingList.scss';
+import './shoppingList.scss'
+
+// Import Data
+import data from 'src/data/recipes'
 
 // Code
 const ShoppingList = () => (
@@ -25,8 +29,14 @@ const ShoppingList = () => (
               <h2 className="shoppingList-title">Légumes</h2>
               <div className="shoppingList-cell">
                 <ul>
-                  <li><input type="checkbox" />1kg de carotte</li>
-                  <li><input type="checkbox" />1kg de carotte</li>
+                  {/* <li><input type="checkbox" />
+                    {data.recipeIngredients.map(ingredient => (
+                      <ShoppingListItems
+                        ingredients={ingredient}
+                      />
+                    ))}
+                  </li> */}
+                  <li><input type="checkbox" />test</li>
                   <li><input type="checkbox" />1kg de carotte</li>
                   <li><input type="checkbox" />1kg de carotte</li>
                   <li><input type="checkbox" />1kg de carotte</li>
@@ -45,7 +55,7 @@ const ShoppingList = () => (
               </div>
             </div>
           </Grid.Column>
-          <Grid.Column width={3} className="shoppingList-column">
+          {/* <Grid.Column width={3} className="shoppingList-column">
             <div className="shoppingList-theme">
               <h2 className="shoppingList-title">Biscuits et gâteaux</h2>
               <div className="shoppingList-cell">
@@ -165,7 +175,7 @@ const ShoppingList = () => (
                 </ul>
               </div>
             </div>
-          </Grid.Column>
+          </Grid.Column> */}
           <div>
             <a href="#" className="shoppingList-footer-button">Exportez votre liste de courses</a>
           </div>
@@ -173,7 +183,7 @@ const ShoppingList = () => (
       </Grid>
     </Container>
   </Container>
-);
+)
 
 // Export
-export default ShoppingList;
+export default ShoppingList

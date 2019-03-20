@@ -7,8 +7,9 @@
   display: flex;
   flex-wrap: wrap;
   width: 80%;
-  margin: 50px auto;
+  margin: 80px auto;
   border-radius: 5px;
+  border: 1px solid #acacac;
   box-shadow: 1px 20px 30px #cecece !important;
 
   &-column {
@@ -47,7 +48,7 @@
     margin-bottom: 10px;
 }
   &-footer-button {
-    width: 78vw;
+    width: 73vw;
     display: block;
     background-color: $green;
     color: #FFF;

@@ -10,11 +10,13 @@ import { Route } from 'react-router-dom'
 import './app.scss'
 import Nav from 'src/components/Nav'
 import Calendar from 'src/components/Calendar'
-import ShoppingList from 'src/components/ShoppingList';
+import ShoppingList from 'src/components/ShoppingList'
 import Recipes from 'src/components/Recipes'
 import Recipe from 'src/components/Recipe'
 import Footer from 'src/components/Footer'
 import Copyright from 'src/components/Copyright'
+
+import data from 'src/data/recipes'
 
 /**
  * Code
