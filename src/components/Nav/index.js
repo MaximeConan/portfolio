@@ -68,20 +68,36 @@ class Nav extends React.Component {
               isLogged
                 ? (
                   <Fragment>
-                    <Menu.Item>
+                    <Menu.Item
+                      as={NavLink}
+                      to="/mon-compte"
+                      name="Mon compte"
+                    >
                       <Button id="nav-button--log">Mon compte</Button>
                     </Menu.Item>
-                    <Menu.Item>
+                    <Menu.Item
+                      as={NavLink}
+                      to="/deconnexion"
+                      name="Se déconnecter"
+                    >
                       <Button id="nav-button--log" onClick={this.handleClick}>Se déconnecter</Button>
                     </Menu.Item>
                   </Fragment>
                 )
                 : (
                   <Fragment>
-                    <Menu.Item>
+                    <Menu.Item
+                      as={NavLink}
+                      to="/inscription"
+                      name="S'inscrire"
+                    >
                       <Button id="nav-button--log">S'inscrire</Button>
                     </Menu.Item>
-                    <Menu.Item>
+                    <Menu.Item
+                      as={NavLink}
+                      to="/connexion"
+                      name="Se connecter"
+                    >
                       <Button id="nav-button--log" onClick={this.handleClick}>Se connecter</Button>
                     </Menu.Item>
                   </Fragment>

@@ -20,6 +20,11 @@ import Recipe from 'src/components/Recipe'
 import Footer from 'src/components/Footer'
 import Copyright from 'src/components/Copyright'
 
+// Import des form
+import SignIn from 'src/components/AccountForm/SignIn'
+import SignUp from 'src/components/AccountForm/SignUp'
+import Account from 'src/components/AccountForm/Account'
+
 /**
  * Code
  */
@@ -47,6 +52,10 @@ const App = () => (
         }}
       />
       <Route exact path="/shopping-list" component={ShoppingList} />
+      <Route exact path="/inscription" component={SignUp} />
+      <Route exact path="/connexion" component={SignIn} />
+      <Route exact path="/mon-compte" component={Account} />
+      <Route exact path="/deconnexion" render={() => <Redirect to="/" />} />
     </Switch>
     <Footer />
     <Copyright />

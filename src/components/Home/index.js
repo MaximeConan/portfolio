@@ -29,7 +29,6 @@ const fields = [
   },
 ]
 
-
 // Code
 class Home extends React.Component {
   // State de App
@@ -73,7 +72,8 @@ class Home extends React.Component {
         .catch((error) => {
           console.log(error)
         })
-    } else {
+    }
+    else {
       alert('Passwords not match')
     }
   }
