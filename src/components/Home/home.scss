@@ -6,7 +6,7 @@
   position: relative;
   display: cover;
   background-repeat: no-repeat;
-  height: 96vh;
+  height: 84vh;
   z-index: -2;
 
   &:before {
@@ -21,9 +21,127 @@
     background-repeat: no-repeat;
     opacity: .8;
   }
+
+  &-right
+  {
+    display: flex;
+    align-self: center;
+    color: white;
+
+    &-title{
+      font-size: 2.5em;
+      margin: 0 0 6% 7%
+      
+    }
+    &-text{
+      color: white;
+      font-size: 1.5em;
+      margin: 0 0 5% 11%
+    }
+    &-button{
+      color: white !important;
+      background-color: $green !important;
+      font-size: 1.5em !important;
+      margin: 10% 0 5% 50% !important;
+    }
+  }
+  &-left
+  {
+    &-image{
+      margin-top: 7vh;
+      width: 71vw;
+      height: auto;
+    }
+  }
+  
 }
-.test
+
+.section2
 {
-  width: 40vw;
-  height: auto;
+  &-title
+  {
+    position: absolute;
+    font-size: 2.5em;
+    color: $blue;
+    padding-top: 75px;
+  }
+}
+.section3
+{
+  background-color: $green;
+  height: 70vh;
+  display: flex;
+
+  &-title
+  {
+    color: white;
+  }
+  &-image
+  {
+    margin: 20px;
+  }
+}
+.section4
+{
+  background-image: url('../../images/Web-Showcase-Project-Presentation.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  height: 75vh;
+  width: 100vw;
+  
+
+  &-title
+  {
+    color: $blue;
+  }
+}
+.section5
+{
+  background-color: $green;
+  height: 75vh;
+  width: 100vw;
+
+
+  &-title
+  {
+    color: $blue;
+  }
+}
+.section6
+{
+  background-image: url('../../images/gardie-design-social-media-marketing-563667-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  height: 75vh;
+  width: 100vw;
+  
+
+  &-title
+  {
+    color: $blue;
+  }
+}
+.section7
+{
+  background-color: $green;
+  height: 75vh;
+  width: 100vw;
+
+
+  &-title
+  {
+    color: $blue;
+  }
+}
+.sectionNewsletter
+{
+  background-color: #f9f9f9;
+  height: 40vh;
+  width: 100vw;
+
+
+  &-title
+  {
+    color: $blue;
+  }
 }
