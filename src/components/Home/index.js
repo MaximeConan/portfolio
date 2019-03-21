@@ -3,8 +3,8 @@ import React, { Fragment } from 'react'
 import { Container, Grid, Button } from 'semantic-ui-react'
 import Coverflow from 'react-coverflow'
 
-
 // Local import
+import Stars from './Stars'
 import './home.scss'
 
 
@@ -67,11 +67,22 @@ const Home = () => (
         <h2 className="section6-title">Rejoignez-nous en vous inscrivant, le meileur,<br />c'est que c'est totalement gratuit !</h2>
         <Button className="section6-button">Je m'inscris</Button>
       </Grid>
-      <Grid className="section7">
+      <Grid textAlign="center" className="section7">
         <h2 className="section7-title">Ils l'ont testé et vite adopté !</h2>
-        <Grid.Column>
-          <img src="" alt=""/>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et modi soluta officiis nihil laboriosam saepe, perspiciatis repudiandae vitae temporibus veritatis porro ad alias quam expedita.</p>
+        <Grid.Column width={4} className="section7-column">
+          <img className="section7-column-image" src="src/assets/Home/Section-Avis/section-avis-woman-1.jpg" alt="" />
+          <Stars />
+          <p className="section7-column-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et modi soluta officiis nihil laboriosam saepe, perspiciatis repudiandae vitae temporibus veritatis porro ad alias quam expedita.</p>
+        </Grid.Column>
+        <Grid.Column width={4} className="section7-column">
+          <img className="section7-column-image" src="src/assets/Home/Section-Avis/section-avis-man-1.jpg" alt="" />
+          <Stars />
+          <p className="section7-column-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et modi soluta officiis nihil laboriosam saepe, perspiciatis repudiandae vitae temporibus veritatis porro ad alias quam expedita.</p>
+        </Grid.Column>
+        <Grid.Column width={4} className="section7-column">
+          <img className="section7-column-image" src="src/assets/Home/Section-Avis/section-avis-woman-1.jpg" alt="" />
+          <Stars />
+          <p className="section7-column-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et modi soluta officiis nihil laboriosam saepe, perspiciatis repudiandae vitae temporibus veritatis porro ad alias quam expedita.</p>
         </Grid.Column>
       </Grid>
       <Grid className="sectionNewsletter">

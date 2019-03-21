@@ -181,11 +181,37 @@
   background-color: $green;
   height: 75vh;
 
-
-
   &-title
   {
     color: $blue;
+    position: absolute;
+    font-size: 2.5em;
+    top: 5%;
+  }
+  &-column
+  {
+    position: absolute;
+    top: 15%;
+    &-stars
+    {
+      width: 30px;
+      height: auto;
+      display: inline-block;
+      margin: 40px 2px;
+    }
+    &-image
+    {
+      clip-path: circle(50%);
+      width: 200px;
+      height: auto;
+    }
+    &-text
+    {
+      width: 300px;
+      height: auto;
+      margin: auto;
+      color: $blue;
+    }
   }
 }
 .sectionNewsletter
