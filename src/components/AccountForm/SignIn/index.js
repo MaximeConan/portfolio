@@ -54,11 +54,11 @@ class SignIn extends React.Component {
     }
 
     axios({
-      method: 'post',
-      url: 'http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public/api/login_check',
+      method: 'get',
+      url: 'http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public/api/login',
       data,
       headers: {
-        'Content-Type': 'multipart/form-data',
+        'Content-Type': 'application/json',
       },
     })
       .then((response) => {

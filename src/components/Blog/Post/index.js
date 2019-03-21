@@ -4,12 +4,14 @@ import { Container } from 'semantic-ui-react'
 
 // Local import
 import '../blog.scss'
+import HeroSectionPost from 'src/components/Blog/Post/HeroSectionPost'
 
 const Post = ({ post }) => (
   console.log(post),
     <Container>
-      <div className="recipe-content">
-        {post.title}
+      <HeroSectionPost {... post} />
+      <div className="post-content">
+        {post.content}
       </div>
     </Container>
 )

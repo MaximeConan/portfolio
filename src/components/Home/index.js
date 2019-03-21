@@ -1,8 +1,6 @@
 // NPM import
 import React from 'react'
 import { Container, Grid } from 'semantic-ui-react'
-import Login from 'src/components/Login'
-
 
 // Local import
 import './home.scss'
@@ -12,7 +10,6 @@ import './home.scss'
 const Home = () => (
 
   <Container fluid>
-    <Login />
     <Grid className="section1">
       <Grid.Column width={9}>
         <h2>Votre planning hebdo' en quelques clics !</h2>
@@ -21,7 +18,7 @@ const Home = () => (
         </p>
       </Grid.Column>
       <Grid.Column width={6}>
-        <img className="test" src="src/images/Mockup - copie.png" alt=""/>
+        <img className="test" src="src/assets/Mockup - copie.png" alt="" />
       </Grid.Column>
     </Grid>
     <Grid className="section2">
