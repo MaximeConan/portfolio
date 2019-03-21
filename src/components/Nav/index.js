@@ -110,8 +110,6 @@ class Nav extends React.Component {
                   </Fragment>
                 )
             }
-
-           
           </Menu.Menu>
         </Menu>
       </Container>
