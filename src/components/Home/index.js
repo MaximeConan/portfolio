@@ -2,12 +2,15 @@
 import React from 'react'
 import { Container, Grid } from 'semantic-ui-react'
 
+
 // Local import
 import './home.scss'
 
 
 // Code
 const Home = () => (
+
+=======
   <Container fluid>
     <Grid className="section1">
       <Grid.Column width={9}>
@@ -21,10 +24,9 @@ const Home = () => (
       </Grid.Column>
     </Grid>
     <Grid className="section2">
-      
+     
     </Grid>
+
   </Container>
 )
-
-// Export
 export default Home

@@ -1,5 +1,5 @@
 // NPM Import
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Menu, Button, Container } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
@@ -8,13 +8,30 @@ import './nav.scss'
 
 // Code
 class Nav extends React.Component {
-  state = { activeItem: 'home' }
+  state = {
+    activeItem: 'home',
+    isLogged: true,
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  handleClick = () => {
+    const { isLogged } = this.state
+
+    if (isLogged) {
+      this.setState({
+        isLogged: false,
+      })
+    } else {
+      this.setState({
+        isLogged: true,
+      })
+    }
+  }
+
   render() {
     const { activeItem } = this.state
-
+    const { isLogged } = this.state
     return (
       <Container>
         <Menu secondary className="nav">
@@ -37,13 +54,6 @@ class Nav extends React.Component {
               onClick={this.handleItemClick}
             />
             <Menu.Item
-              as={NavLink}
-              to="/single-recettes"
-              name="Une recette"
-              active={activeItem === 'Une recette'}
-              onClick={this.handleItemClick}
-            />
-            <Menu.Item
               name="Le blog"
               active={activeItem === 'Le blog'}
               onClick={this.handleItemClick}
@@ -58,9 +68,50 @@ class Nav extends React.Component {
             <Menu.Item as={NavLink} to="/agenda">
               <Button id="nav-button--calendar">Mon agenda</Button>
             </Menu.Item>
-            <Menu.Item>
-              <Button id="nav-button--log">Se déconnecter</Button>
-            </Menu.Item>
+
+            {/* Navigation changements for sign in / sign up / login state */}
+
+            {
+              isLogged
+                ? (
+                  <Fragment>
+                    <Menu.Item
+                      as={NavLink}
+                      to="/mon-compte"
+                      name="Mon compte"
+                    >
+                      <Button id="nav-button--log">Mon compte</Button>
+                    </Menu.Item>
+                    <Menu.Item
+                      as={NavLink}
+                      to="/deconnexion"
+                      name="Se déconnecter"
+                    >
+                      <Button id="nav-button--log" onClick={this.handleClick}>Se déconnecter</Button>
+                    </Menu.Item>
+                  </Fragment>
+                )
+                : (
+                  <Fragment>
+                    <Menu.Item
+                      as={NavLink}
+                      to="/inscription"
+                      name="S'inscrire"
+                    >
+                      <Button id="nav-button--log">S'inscrire</Button>
+                    </Menu.Item>
+                    <Menu.Item
+                      as={NavLink}
+                      to="/connexion"
+                      name="Se connecter"
+                    >
+                      <Button id="nav-button--log" onClick={this.handleClick}>Se connecter</Button>
+                    </Menu.Item>
+                  </Fragment>
+                )
+            }
+
+           
           </Menu.Menu>
         </Menu>
       </Container>
