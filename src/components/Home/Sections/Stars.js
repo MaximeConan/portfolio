@@ -3,7 +3,7 @@ import React from 'react'
 
 
 // Local import
-import './home.scss'
+import 'src/components/Home/home.scss'
 
 
 // Code
