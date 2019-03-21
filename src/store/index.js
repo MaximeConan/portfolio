@@ -1,12 +1,12 @@
 /**
  * Npm import
  */
-import { createStore } from 'redux';
+import { createStore } from 'redux'
 
 /**
  * Local import
  */
-import reducer from 'src/store/reducer';
+import reducer from 'src/store/reducer'
 
 /**
  * Store
@@ -15,10 +15,10 @@ import reducer from 'src/store/reducer';
 const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
+)
 /* eslint-enable */
 
 /**
  * Export
  */
-export default store;
+export default store

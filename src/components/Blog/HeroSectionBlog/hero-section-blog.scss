@@ -1,0 +1,30 @@
+@import 'src/styles/vars';
+
+.hero-section-blog {
+  padding: 120px 0px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+
+  &:before {
+    content:"";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, $blue, $green);
+    opacity: .8;
+  }
+
+  &-content {
+    z-index: 100;
+    position: relative;
+    color: #FFF;
+
+    & p {
+      color: #FFF !important;
+    }
+  }
+}

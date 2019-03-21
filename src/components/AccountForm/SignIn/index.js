@@ -7,6 +7,7 @@ import {
   Grid,
 } from 'semantic-ui-react'
 import axios from 'axios'
+import setAuthorizationToken from 'src/utils/setAuthorizationToken'
 
 // Local import
 import '../account-form.scss'
@@ -53,16 +54,19 @@ class SignIn extends React.Component {
     }
 
     axios({
-      method: 'get',
-      url: 'http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public/login',
+      method: 'post',
+      url: 'http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public/api/login_check',
       data,
       headers: {
-        Authorization: `bearer${token}`,
-        'Content-Type': 'application/json',
+        'Content-Type': 'multipart/form-data',
       },
     })
       .then((response) => {
         console.log('Réponse get - signin : ', response)
+
+        const { token } = response.data
+        localStorage.setItem('jwtToken', token)
+        setAuthorizationToken(token)
         this.setState({
           username,
           password,

@@ -1,0 +1,49 @@
+@import 'src/styles/vars';
+
+.sidebar {
+  background-color: #eef4fb;
+  padding: 2em;
+  min-height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+  & i {
+    color: #f5b217;
+    padding-right: .5em;
+  }
+
+  &-filter, h2 {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #97c6dc;
+
+    &:last-child {
+       border-bottom: none;
+    }
+
+    & p {
+      font-weight: bold;
+      color: $blue;
+    }
+  }
+}
+
+.content-hits {
+  li {
+    width: 100%;
+  }
+} 
+
+.post-item {
+  h3 {
+    margin: 0 ;
+  }
+
+  &-category {
+    background-color: $green;
+    padding: .5em 1em;
+    color: #FFF;
+    border-radius: 3px;
+  }
+}
