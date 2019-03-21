@@ -2,7 +2,7 @@
  * NPM import
  */
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 /**
  * Local import
@@ -22,7 +22,7 @@ import SignIn from 'src/components/AccountForm/SignIn'
 import SignUp from 'src/components/AccountForm/SignUp'
 import Account from 'src/components/AccountForm/Account'
 
-import data from 'src/data/recipes'
+import recipes from 'src/data/recipes'
 
 
 /**

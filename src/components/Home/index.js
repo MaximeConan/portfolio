@@ -10,7 +10,6 @@ import './home.scss'
 // Code
 const Home = () => (
 
-=======
   <Container fluid>
     <Grid className="section1">
       <Grid.Column width={9}>
