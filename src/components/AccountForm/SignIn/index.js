@@ -53,17 +53,19 @@ class SignIn extends React.Component {
       password,
     }
 
+    axios.defaults.baseURL = 'http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public'
+    axios.defaults.headers.post['Content-Type'] = 'application/json'
+    axios.defaults.headers.get['Content-Type'] = 'application/json'
+
     axios({
-      method: 'get',
-      url: 'http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public/api/login',
+      method: 'post',
+      crossDomain: true,
+      url: 'api/login_check',
       data,
-      headers: {
-        'Content-Type': 'application/json',
-      },
     })
       .then((response) => {
-        console.log('Réponse get - signin : ', response)
-
+        console.log('Réponse post - signin : ', response)
+        /*
         const { token } = response.data
         localStorage.setItem('jwtToken', token)
         setAuthorizationToken(token)
@@ -72,7 +74,7 @@ class SignIn extends React.Component {
           password,
           isLogged: response.data.isLogged,
           errors: response.data.errors,
-        })
+        }) */
       })
       .catch((error) => {
         console.log(error)

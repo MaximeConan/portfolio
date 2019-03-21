@@ -8,7 +8,7 @@ import './hero-section-recipes.scss'
 
 // Code
 const divStyle = {
-  backgroundImage: 'url(src/images/rsz_lily-banse-365344-unsplash.jpg)',
+  backgroundImage: 'url(src/assets/rsz_lily-banse-365344-unsplash.jpg)',
 }
 
 const HeroSectionRecipe = () => (

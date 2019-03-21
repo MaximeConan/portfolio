@@ -103,8 +103,8 @@ class SignUp extends React.Component {
           <Form className="field" onSubmit={this.handleSubmit}>
             <h3 className="field-gender-text">Vous êtes ?</h3>
             <div className="field-gender-button-images">
-              <Button circular className="field-gender-button-image"><img src="src/images/employee.svg" alt="" /></Button>
-              <Button circular className="field-gender-button-image"><img src="src/images/woman.svg" alt="" /></Button>
+              <Button circular className="field-gender-button-image"><img src="src/assets/employee.svg" alt="" /></Button>
+              <Button circular className="field-gender-button-image"><img src="src/assets/woman.svg" alt="" /></Button>
             </div>
             {fields.map(field => (
               <Form.Field required>
