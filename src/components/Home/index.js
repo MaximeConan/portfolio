@@ -39,10 +39,10 @@ const Home = () => (
           }}
           displayQuantityOfSide={2}
           navigation={false}
-          infiniteScroll={1}
-          enableScroll={1}
+          infiniteScroll={0}
+          enableScroll={0}
           clickable={1}
-          active={0}
+          active={1}
         >
           <img src="src/assets/sara-dubler-648793-unsplash.jpg" alt="Recette 1" data-action="" />
           <img src="src/assets/eaters-collective-132772-unsplash.jpg" alt="Recette 2" data-action="" />
@@ -51,21 +51,21 @@ const Home = () => (
           <img src="src/assets/rsz_lily-banse-365344-unsplash.jpg" alt="Recette 4" data-action="" />
         </Coverflow>
       </Grid>
-      <Grid>
-        <Grid.Column textAlign="center" className="section3">
-          <h2 className="section3-title">Planifiez vos recettes de la semaine.</h2>
-          <img className="section3-image" src="src/assets/agenda copie.png" alt="" />
-        </Grid.Column>
+      <Grid textAlign="center" className="section3">
+        <h2 className="section3-title">Planifiez vos recettes de la semaine.</h2>
+        <img className="section3-image" src="src/assets/Home/agenda copie.png" alt="" />
       </Grid>
       <Grid className="section4">
-        <h2 className="section4-title">Générez votre liste de courses en 1 clic !</h2>
+        <h2 className="section4-title-1">Générez votre liste de courses<br /> en 1 clic !</h2>
+        <h2 className="section4-title-2">Et retrouvez-là sur votre mobile !</h2>
       </Grid>
-      <Grid className="section5">
-        <h2 className="section5-title">Cependant nous ne faisons (pas encore) les courses pour vous, mais nous vous accompagnons pour la réalisation des recettes</h2>
+      <Grid textAlign="center" className="section5">
+        <h2 className="section5-title">Cependant nous ne faisons (pas encore) les courses pour vous,<br />mais nous vous accompagnons pour la réalisation des recettes !</h2>
+        <img className="section5-image" src="src/assets/Home/section-5-instructions.png" alt="" />
       </Grid>
       <Grid className="section6">
-        <h2 className="section6-title">Rejoignez-nous en vous inscrivant, le meileur, c'est que c'est totalement gratuit !</h2>
-        <Button>Je m'inscris</Button>
+        <h2 className="section6-title">Rejoignez-nous en vous inscrivant, le meileur,<br />c'est que c'est totalement gratuit !</h2>
+        <Button className="section6-button">Je m'inscris</Button>
       </Grid>
       <Grid className="section7">
         <h2 className="section7-title">Ils l'ont testé et vite adopté !</h2>

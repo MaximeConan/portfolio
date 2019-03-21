@@ -1,6 +1,6 @@
 @import '../../styles/vars';
 
-.section1
+.section1 // mockup du Mac
 {
   background-image: url('../../images/rsz_lily-banse-365344-unsplash.jpg');
   position: relative;
@@ -48,84 +48,139 @@
   &-left
   {
     &-image{
-      margin-top: 7vh;
-      width: 71vw;
+      position: absolute;
+      right: -60%;
+      bottom: -0.8%;
+      width: 70vw;
       height: auto;
+      clip-path: inset(0 11% 0 0);
     }
   }
-  
 }
 
-.section2
+.section2 // Carroussel des recettes
 {
+  position: relative;
+
   &-title
   {
+
     position: absolute;
     font-size: 2.5em;
     color: $blue;
-    padding-top: 75px;
+    top:9%;
   }
 }
-.section3
+.section3 // présentation de l'agenda
 {
   background-color: $green;
   height: 70vh;
-  display: flex;
+  position: relative;
+
 
   &-title
   {
     color: white;
+    position: absolute;
+    font-size: 2.5em;
+    top: 6%;
   }
   &-image
   {
-    margin: 20px;
+    position: absolute;
+    top: 20%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.445);
   }
 }
-.section4
+.section4 // Mockup de l'iPhone et du Mac
 {
-  background-image: url('../../images/Web-Showcase-Project-Presentation.png');
+  position: relative;
+  background-image: url('../../assets/Home/section-4-background.png');
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
+  background-position: center;
   height: 75vh;
-  width: 100vw;
-  
 
   &-title
   {
-    color: $blue;
+    &-1
+    {
+      color: $blue;
+      position: absolute;
+      top: 10%;
+      left: 8%;
+      font-size: 2.5em;
+      text-align: center;
+    }
+    &-2
+    {
+      color: $blue;
+      position: absolute;
+      top: 20%;
+      left: 8%;
+      font-size: 2.5em;
+    }
   }
 }
-.section5
+.section5 // Présentation de la liste de courses
 {
+  position: relative;
   background-color: $green;
   height: 75vh;
-  width: 100vw;
-
 
   &-title
   {
     color: $blue;
+    position: absolute;
+    font-size: 2.5em;
+    top: 6%;
+  }
+  &-image
+  {
+    position: absolute;
+    justify-content: center;
+    top: 25%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.445);
+    width: 50vw;
+    height: auto;
   }
 }
-.section6
+
+.section6 // Femme avec le sandwich
 {
-  background-image: url('../../images/gardie-design-social-media-marketing-563667-unsplash.jpg');
+  position: relative;
+  background-image: url('../../assets/Home/section-6-background.jpg');
   background-repeat: no-repeat;
   background-size: cover; 
-  height: 75vh;
-  width: 100vw;
-  
+  height: 85vh;
 
   &-title
   {
     color: $blue;
+    position: absolute;
+    text-align: center;
+    font-size: 2.5em;
+    top: 20%;
+    right: 5%;
+  }
+  &-button
+  {
+    color: white !important;
+    background-color: $blue !important;
+    font-size: 1.5em !important;
+    position: absolute;
+    height: 55px;
+    width: 200px;
+    right: 18%;
+    top: 45%;
   }
 }
-.section7
+.section7 // les avis
 {
+  position: relative;
   background-color: $green;
   height: 75vh;
-  width: 100vw;
+
 
 
   &-title
@@ -135,9 +190,10 @@
 }
 .sectionNewsletter
 {
+  position: relative;
   background-color: #f9f9f9;
   height: 40vh;
-  width: 100vw;
+
 
 
   &-title
