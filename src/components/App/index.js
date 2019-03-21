@@ -2,10 +2,7 @@
  * NPM import
  */
 import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
-
-// Data import
-import recipes from 'src/data/recipes'
+import { Route } from 'react-router-dom'
 
 /**
  * Local import
@@ -24,6 +21,9 @@ import Copyright from 'src/components/Copyright'
 import SignIn from 'src/components/AccountForm/SignIn'
 import SignUp from 'src/components/AccountForm/SignUp'
 import Account from 'src/components/AccountForm/Account'
+
+import data from 'src/data/recipes'
+
 
 /**
  * Code
@@ -59,6 +59,7 @@ const App = () => (
     </Switch>
     <Footer />
     <Copyright />
+
   </div>
 )
 

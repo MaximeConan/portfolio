@@ -1,0 +1,26 @@
+@import '../../styles/vars';
+
+.section1
+{
+  background-image: url('../../images/rsz_lily-banse-365344-unsplash.jpg');
+  position: relative;
+  height: 96vh;
+  z-index: -2;
+
+  &:before {
+    content:"";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, $blue, $green);
+    opacity: .8;
+  }
+}
+.test
+{
+  width: 40vw;
+  height: auto;
+}
