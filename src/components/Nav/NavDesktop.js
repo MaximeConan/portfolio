@@ -16,26 +16,26 @@ class NavDesktop extends React.Component {
     this.setState({ activeItem: name })
   }
 
-  handleClick = () => {
-    const { isLogged } = this.props
+  // handleClick = () => {
+  //   const { isLogged } = this.props
 
-    if (isLogged) {
-      this.setState({
-        isLogged: false,
-      })
-    } else {
-      this.setState({
-        isLogged: true,
-      })
-    }
-  }
+  //   if (isLogged) {
+  //     this.setState({
+  //       isLogged: false,
+  //     })
+  //   } else {
+  //     this.setState({
+  //       isLogged: true,
+  //     })
+  //   }
+  // }
 
   render() {
-    const { activeItem } = this.props
-    const { isLogged } = this.props
+    const { activeItem, isLogged, login, logout } = this.props
+
     return (
       <Container>
-        <Menu secondary className="nav">
+        <Menu secondary className="nav nav-desktop">
           <h1><a href="/"><Logo /></a></h1>
           <Menu.Menu position="right">
             <Menu.Item
@@ -69,10 +69,8 @@ class NavDesktop extends React.Component {
               active={activeItem === 'Ma Liste De Courses'}
               onClick={this.handleItemClick}
             />
-            <Menu.Item as={NavLink} to="/agenda">
-              <Button id="nav-button--calendar">Mon agenda</Button>
-            </Menu.Item>
-
+            <Menu.Item as={NavLink} to="/agenda" className="nav-button--calendar" name="Mon agenda" />
+  
             {/* Navigation changements for sign in / sign up / login state */}
 
             {
@@ -83,16 +81,15 @@ class NavDesktop extends React.Component {
                       as={NavLink}
                       to="/mon-compte"
                       name="Mon compte"
-                    >
-                      <Button id="nav-button--log">Mon compte</Button>
-                    </Menu.Item>
+                      className="nav-button--log"
+                    />
                     <Menu.Item
                       as={NavLink}
                       to="/deconnexion"
                       name="Se déconnecter"
-                    >
-                      <Button id="nav-button--log" onClick={this.handleClick}>Se déconnecter</Button>
-                    </Menu.Item>
+                      className="nav-button--log"
+                      onClick={logout}
+                    />
                   </Fragment>
                 )
                 : (
@@ -101,21 +98,19 @@ class NavDesktop extends React.Component {
                       as={NavLink}
                       to="/inscription"
                       name="S'inscrire"
+                      className="nav-button--log"
                     >
-                      <Button id="nav-button--log">S'inscrire</Button>
                     </Menu.Item>
                     <Menu.Item
                       as={NavLink}
                       to="/connexion"
                       name="Se connecter"
-                    >
-                      <Button id="nav-button--log" onClick={this.handleClick}>Se connecter</Button>
-                    </Menu.Item>
+                      className="nav-button--log"
+                      onClick={login}
+                    />
                   </Fragment>
                 )
             }
-
-           
           </Menu.Menu>
         </Menu>
       </Container>
