@@ -5,25 +5,85 @@
   border-bottom: 1px solid #cecece !important;
 }
 
-#nav-button--calendar, #nav-button--log {
-  color: #FFF;
-  font-weight: bold;
+.nav-button--calendar, .nav-button--log {
+  color: #FFF !important;
+  font-weight: bold !important;
+  padding: 1em 3em !important;
+  border-radius: 5px;
 }
 
-#nav-button--calendar {
-  background-color: $green;
+.nav-button--calendar {
+  background-color: $green !important;
   transition: all .3;
 
   &:hover {
-    background-color: $green-dark;
+    background-color: $green-dark !important;
   }
 }
 
-#nav-button--log {
-  background-color: $blue;
+.nav-button--log {
+  background-color: $blue !important;
   transition: all .3;
 
   &:hover {
-    background-color: $blue-dark;
+    background-color: $blue-dark !important;
   }
+}
+
+// réglages de la nav sur desktop
+@media only screen and (min-width: 981px) {
+  .nav-mobile {
+    display: none !important;
+  }
+}
+
+// réglages de la nav sur 
+@media screen and (max-width: 980px) {
+  .nav-desktop {
+    display: none !important;
+  }
+  .nav-mobile {
+    display: block !important;
+
+    &-stack {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    & .vertical {
+      width: 100% !important;
+      box-shadow: none !important;
+      border: none;
+
+    }
+
+    &-items {
+      display: none;
+      
+      & a {
+        padding: 1em !important;
+        border-bottom: 1px solid #cecece;
+      }
+
+      .active {
+        color: $green !important;
+        font-weight: bold !important;
+        background-color: transparent !important;
+      }
+    }
+
+    &-button {
+      display: flex;
+      justify-content: space-between;
+      padding: 1em 0;
+    }
+  }
+
+  .nav-mobile-items--open {
+    display: block;
+    transition: all .3s;
+  }
+
 }
