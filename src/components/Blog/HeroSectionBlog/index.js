@@ -4,7 +4,7 @@ import { Container } from 'semantic-ui-react'
 import { SearchBox } from 'react-instantsearch-dom'
 
 // Local import
-import './hero-section-recipes.scss'
+import './hero-section-blog.scss'
 
 // Code
 const divStyle = {
@@ -12,11 +12,11 @@ const divStyle = {
 }
 
 const HeroSectionRecipe = () => (
-  <Container fluid className="hero-section-recipes" style={divStyle}>
+  <Container fluid className="hero-section-blog" style={divStyle}>
     <Container textAlign="center">
-      <div className="hero-section-recipes-content">
-        <h1>Retrouvez ici toutes nos recettes :</h1>
-        <SearchBox translations={{ placeholder: 'Recherchez votre recette' }} />
+      <div className="hero-section-blog-content">
+        <h1>Recherchez votre article par mot-clé :</h1>
+        <SearchBox translations={{ placeholder: 'Recherchez votre article' }} />
       </div>
     </Container>
   </Container>

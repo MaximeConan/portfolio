@@ -4,7 +4,6 @@
 import React, { Fragment } from 'react'
 import { Container } from 'semantic-ui-react'
 
-
 /**
 * local import
 */
