@@ -11,14 +11,14 @@ import Coverflow from 'react-coverflow'
 
 const Section2 = () => (
   <Grid textAlign="center" className="section2">
-    <h2 className="section2-title">Faites votre choix parmi 70 000 recettes.</h2>
+    <h2 className="section2-title">Faites votre choix parmi 70 000 recettes.</h2>
     <Coverflow
       media={{
         '@media (max-width: auto)': {
           width: '100vw',
           height: '80vh',
         },
-        '@media (min-width: 80vh)': {
+        '@media (min-width: 80vw)': {
           width: '100vw',
           height: '70vh',
         },

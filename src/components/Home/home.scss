@@ -66,7 +66,7 @@
 
       @media screen and (min-width: 200px) and (max-width: 400px) {
         position: absolute;
-        top: 35%;
+        bottom: 50%;
         left: -25%;
         font-size: 1.5em;
         width: 80vw;
@@ -85,7 +85,7 @@
 
       @media screen and (min-width: 200px) and (max-width: 400px) {
         position: absolute;
-        top: 55%;
+        bottom: 0;
         width: 115vw;
         clip-path: inset(0 0 0 0);
       }
@@ -97,13 +97,22 @@
 {
   position: relative;
 
+  // @media screen and (min-width: 200px) and (max-width: 400px) {
+  // }
+
   &-title
   {
-
     position: absolute;
     font-size: 2.5em;
     color: $blue;
     top:9%;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      font-size: 1.5em;
+      position: absolute;
+      text-align: center;
+      width: 80vw;
+    }
   }
 }
 .section3 // présentation de l'agenda
@@ -112,6 +121,9 @@
   height: 70vh;
   position: relative;
 
+  @media screen and (min-width: 200px) and (max-width: 400px) {
+    height: 90vh;
+  }
 
   &-title
   {
@@ -119,12 +131,28 @@
     position: absolute;
     font-size: 2.5em;
     top: 6%;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      font-size: 1.5em;
+      position: absolute;
+      width: 90vw;
+      height: 0vh;
+      text-align: center;
+    }
+
   }
   &-image
   {
     position: absolute;
     top: 20%;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.445);
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      position: absolute;
+      top: 35%;
+      clip-path: inset(0 140px 0 140px);
+      width: 160vw;
+    }
   }
   &-commentaire
   {
@@ -140,6 +168,15 @@
       padding: 20px 25px;
       border-radius: 5px;
       text-align: center;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        font-size: 1em;
+        position: absolute;
+        width: 60vw;
+        left: 18%;
+        padding: 10px 15px;
+        text-align: center;
+      }
     }
     &-2
     {
@@ -153,11 +190,21 @@
       padding: 20px 25px;
       border-radius: 5px;
       text-align: center;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        font-size: 1em;
+        position: absolute;
+        width: 60vw;
+        top: 42%;
+        right: 2px;
+        padding: 10px 15px;
+        text-align: center;
+      }
     }
     &-3
     {
       position: absolute;
-      top: 78%;
+      bottom: 2%;
       left: 41%;
       width: 360px;
       font-size: 1.5em;
@@ -166,6 +213,17 @@
       padding: 20px 25px;
       border-radius: 5px;
       text-align: center;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        font-size: 1em;
+        padding: 10px 15px;
+        position: absolute;
+        left: 30px;
+        top: 85%;
+        height: 60px;
+        width: 80vw;
+        text-align: center;
+      }
     }
   }
 }
@@ -188,6 +246,14 @@
       left: 8%;
       font-size: 2.5em;
       text-align: center;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        font-size: 1.5em;
+        position: absolute;
+        width: 80vw;
+        text-align: center;
+      }
+      
     }
     &-2
     {
@@ -196,6 +262,14 @@
       top: 20%;
       left: 8%;
       font-size: 2.5em;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        font-size: 1.5em;
+        position: absolute;
+        top: 70%;
+        width: 80vw;
+        text-align: center;
+      }
     }
   }
 }
@@ -211,6 +285,13 @@
     position: absolute;
     font-size: 2.5em;
     top: 6%;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      font-size: 1.5em;
+      position: absolute;
+      width: 90vw;
+      text-align: center;
+    }
   }
   &-image
   {
@@ -220,6 +301,12 @@
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.445);
     width: 50vw;
     height: auto;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      position: absolute;
+      top: 35%;
+      width: 95vw;
+    }
   }
   &-commentaire
   {
@@ -235,32 +322,17 @@
       padding: 20px 25px;
       border-radius: 5px;
       text-align: center;
-    }
-    &-2
-    {
-      position: absolute;
-      top: 40%;
-      right: 5%;
-      width: 340px;
-      font-size: 1.5em;
-      color: white;
-      background-color: $blue;
-      padding: 20px 25px;
-      border-radius: 5px;
-      text-align: center;
-    }
-    &-3
-    {
-      position: absolute;
-      top: 78%;
-      left: 41%;
-      width: 360px;
-      font-size: 1.5em;
-      color: white;
-      background-color: $blue;
-      padding: 20px 25px;
-      border-radius: 5px;
-      text-align: center;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        font-size: 1em;
+        position: absolute;
+        top: 75%;
+        left: 15%;
+        height: 80px;
+        padding: 10px 15px;
+        width: 80vw;
+        text-align: center;
+      }
     }
   }
 }
@@ -273,6 +345,10 @@
   background-size: cover; 
   height: 85vh;
 
+  @media screen and (min-width: 200px) and (max-width: 400px) {
+    background-position: center;
+  }
+
   &-title
   {
     color: $blue;
@@ -281,6 +357,14 @@
     font-size: 2.5em;
     top: 20%;
     right: 5%;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      font-size: 1.5em;
+      position: absolute;
+      top: 5%;
+      width: 95vw;
+      text-align: center;
+    }
   }
   &-button
   {
@@ -292,6 +376,11 @@
     width: 200px;
     right: 18%;
     top: 45%;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      position: absolute;
+      font-size: 1.5em;
+    }
   }
 }
 .section7 // les avis
@@ -306,6 +395,13 @@
     position: absolute;
     font-size: 2.5em;
     top: 5%;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      font-size: 1.5em;
+      position: absolute;
+      width: 90vw;
+      text-align: center;
+    }
   }
   &-column
   {
