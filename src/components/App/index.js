@@ -1,5 +1,6 @@
 // NPM import
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
 // Local import
@@ -30,6 +31,7 @@ import Account from 'src/components/AccountForm/Account'
 import recipes from 'src/data/recipes'
 import posts from 'src/data/posts'
 
+import PrivateRoute from './PrivateRoute'
 
 // Code
 const App = () => (
@@ -73,6 +75,8 @@ const App = () => (
       <Route exact path="/shopping-list" component={ShoppingList} />
       <Route exact path="/inscription" component={SignUp} />
       <Route exact path="/connexion" component={SignIn} />
+      <PrivateRoute exact path="/mon-compte" component={Account} />,
+      <PrivateRoute exact path="/agenda" component={Calendar} />
       <Route exact path="/mon-compte" component={Account} />
       <Route exact path="/deconnexion" render={() => <Redirect to="/" />} />
     </Switch>
@@ -81,7 +85,6 @@ const App = () => (
 
   </div>
 )
-
 
 // Export
 export default App
