@@ -9,6 +9,10 @@
   height: 84vh;
   z-index: -2;
 
+  @media screen and (min-width: 200px) and (max-width: 400px) {
+    height: 80vh;
+  }
+
   &:before {
     content:"";
     display: block;
@@ -28,21 +32,45 @@
     align-self: center;
     color: white;
 
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      height: 80%;
+    }
+
     &-title{
       font-size: 2.5em;
-      margin: 0 0 6% 7%
-      
+      margin: 0 0 6% 7%;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        font-size: 1.5em;
+        position: absolute;
+        width: 80vw;
+      }
     }
     &-text{
       color: white;
       font-size: 1.5em;
-      margin: 0 0 5% 11%
+      margin: 0 0 5% 11%;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        font-size: 1em;
+        position: absolute;
+        top: 20%;
+        width: 80vw;
+      }
     }
     &-button{
       color: white !important;
       background-color: $green !important;
       font-size: 1.5em !important;
       margin: 10% 0 5% 50% !important;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        position: absolute;
+        top: 35%;
+        left: -25%;
+        font-size: 1.5em;
+        width: 80vw;
+      }
     }
   }
   &-left
@@ -54,6 +82,13 @@
       width: 70vw;
       height: auto;
       clip-path: inset(0 11% 0 0);
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        position: absolute;
+        top: 55%;
+        width: 115vw;
+        clip-path: inset(0 0 0 0);
+      }
     }
   }
 }
