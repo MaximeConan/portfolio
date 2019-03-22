@@ -20,8 +20,6 @@ import Recipe from 'src/components/Recipe'
 import Blog from 'src/components/Blog'
 import Post from 'src/components/Blog/Post'
 
-
-
 // Import des form
 import SignIn from 'src/components/AccountForm/SignIn'
 import SignUp from 'src/components/AccountForm/SignUp'

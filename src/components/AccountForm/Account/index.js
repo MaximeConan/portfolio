@@ -28,7 +28,7 @@ class Account extends React.Component {
         gender: response.data.gender,
         newsletter: response.data.newsletter,
       })
-    }).catch((error) => {
+    }).catch((error) => {ttp://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/api/profil/edit
       console.log(error)
     })
   }

@@ -1,11 +1,9 @@
 // NPM Import
 import React from 'react'
+import axios from 'axios'
 import Slider from 'react-slick'
 import { Grid, GridColumn } from 'semantic-ui-react'
 import { Hits, Pagination } from 'react-instantsearch-dom'
-
-// Data import
-import recipesData from 'src/data/recipes'
 
 // Local import
 import './recipes.scss'
@@ -16,7 +14,26 @@ import RecipeItemSlider from './RecipeItemSlider'
 // Code
 class RecipesList extends React.Component {
   state = {
-    recipes: recipesData,
+    recipes: [],
+  }
+
+  token = localStorage.getItem('jwtToken')
+
+  componentDidMount() {
+    axios.defaults.baseURL = ' http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/api'
+
+    axios({
+      method: 'get',
+      url: '/recipe',
+      headers: { Authorization: `Bearer ${this.token}` },
+    }).then((response) => {
+      console.log('Réponse get Recipe :', response)
+      this.setState({
+        recipes: response.data,
+      })
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 
   render() {
