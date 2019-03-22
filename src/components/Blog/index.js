@@ -6,20 +6,20 @@ import { InstantSearch, Configure } from 'react-instantsearch-dom'
 
 // Local import
 import './blog.scss'
-import HeroSectionRecipes from './HeroSectionBlog'
+import HeroSectionBlog from './HeroSectionBlog'
 import Sidebar from './Sidebar'
 import PostsList from './PostsList'
 
 // Code
-class Recipes extends React.Component {
+class Blog extends React.Component {
   searchClient = algoliasearch('35SA9ED0IY', '0e066917f18effc54a237822ffb04818')
 
   render() {
     return (
       <InstantSearch searchClient={this.searchClient} indexName="blog_food_planner">
         <Container fluid>
-          <HeroSectionRecipes />
-          <Configure hitsPerPage={8} />
+          <HeroSectionBlog />
+          <Configure hitsPerPage={3} />
           <Grid>
             <Grid.Row>
               <Grid.Column width={4}>
@@ -36,4 +36,4 @@ class Recipes extends React.Component {
   }
 }
 // Export
-export default Recipes
+export default Blog

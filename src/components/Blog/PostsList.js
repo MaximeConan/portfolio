@@ -1,7 +1,7 @@
 // NPM Import
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
-import { Hits } from 'react-instantsearch-dom'
+import { Hits, Pagination } from 'react-instantsearch-dom'
 
 // Data import
 import postsData from 'src/data/posts'
@@ -12,7 +12,7 @@ import PostItem from './PostItem'
 
 
 // Code
-class RecipesList extends React.Component {
+class PostsList extends React.Component {
   state = {
     posts: postsData,
   }
@@ -27,6 +27,9 @@ class RecipesList extends React.Component {
           <Grid.Row columns={1}>
             <Hits hitComponent={PostItem} className="content-hits" />
           </Grid.Row>
+          <Grid.Row>
+            <Pagination />
+          </Grid.Row>
         </Grid>
       </main>
     )
@@ -34,4 +37,4 @@ class RecipesList extends React.Component {
 }
 
 // Export
-export default RecipesList
+export default PostsList

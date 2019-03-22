@@ -9,24 +9,31 @@ import { Grid } from 'semantic-ui-react'
 import './blog.scss'
 
 // Code
-const PostItem = ({ hit }) => (
-  <Link to={`/blog/${hit.slug}`}>
-    <Grid className="post-item">
-      <Grid.Row>
-        <Grid.Column width={4}>
-          <img src={hit.picture} alt="img-post" />
-        </Grid.Column>
-        <Grid.Column width={12}>
-          <h3 className="post-item-title">
-            <Highlight attribute="title" hit={hit} />
-          </h3>
-          <p className="post-item-excerpt">{hit.excerpt}</p>
-          <span className="post-item-category">{hit.category}</span>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-  </Link>
-)
+const PostItem = ({ hit }) => {
+  const divStyle = {
+    backgroundImage: `url(${hit.picture})`,
+  }
+
+  return (
+    <Link to={`/blog/${hit.slug}`}>
+      <Grid className="post-item">
+        <Grid.Row>
+          <Grid.Column width={4} style={divStyle} className="post-item-picture">
+          </Grid.Column>
+          <Grid.Column width={12} className="post-item-details">
+            <h3 className="post-item-title">
+              <Highlight attribute="title" hit={hit} />
+            </h3>
+            <p className="post-item-excerpt">{hit.excerpt}</p>
+            <span className="post-item-category">{hit.category}</span>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Link>
+  )
+}
+
+
 
 PostItem.propTypes = {
   hit: PropTypes.object.isRequired,
