@@ -15,9 +15,16 @@ const Footer = () => (
   <div className="footer">
     <Container>
       <Grid>
+        <Grid.Row columns={1} className="footer-logo">
+          <GridColumn textAlign="center">
+            <h1>
+              <Logo />
+            </h1>
+          </GridColumn>
+        </Grid.Row>
         <Grid.Row columns={4}>
           <Grid.Column>
-            <h3><Logo /></h3>
+            <h3>FoodPlanner</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </Grid.Column>
           <Grid.Column>

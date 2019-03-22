@@ -4,7 +4,12 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 
 // Local import
 import './app.scss'
+
+// Layout
 import Nav from 'src/components/Nav'
+import Footer from 'src/components/Footer'
+import Copyright from 'src/components/Copyright'
+
 import Home from 'src/components/Home'
 import Calendar from 'src/components/Calendar'
 import ShoppingList from 'src/components/ShoppingList'
@@ -15,8 +20,7 @@ import Recipe from 'src/components/Recipe'
 import Blog from 'src/components/Blog'
 import Post from 'src/components/Blog/Post'
 
-import Footer from 'src/components/Footer'
-import Copyright from 'src/components/Copyright'
+
 
 // Import des form
 import SignIn from 'src/components/AccountForm/SignIn'
