@@ -91,6 +91,48 @@
     top: 20%;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.445);
   }
+  &-commentaire
+  {
+    &-1
+    {
+      position: absolute;
+      top: 20%;
+      left: 7%;
+      width: 260px;
+      font-size: 1.5em;
+      color: white;
+      background-color: $blue;
+      padding: 20px 25px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    &-2
+    {
+      position: absolute;
+      top: 40%;
+      right: 5%;
+      width: 340px;
+      font-size: 1.5em;
+      color: white;
+      background-color: $blue;
+      padding: 20px 25px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    &-3
+    {
+      position: absolute;
+      top: 78%;
+      left: 41%;
+      width: 360px;
+      font-size: 1.5em;
+      color: white;
+      background-color: $blue;
+      padding: 20px 25px;
+      border-radius: 5px;
+      text-align: center;
+    }
+  }
 }
 .section4 // Mockup de l'iPhone et du Mac
 {
@@ -144,6 +186,48 @@
     width: 50vw;
     height: auto;
   }
+  &-commentaire
+  {
+    &-1
+    {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+      width: 460px;
+      font-size: 1.5em;
+      color: white;
+      background-color: $blue;
+      padding: 20px 25px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    &-2
+    {
+      position: absolute;
+      top: 40%;
+      right: 5%;
+      width: 340px;
+      font-size: 1.5em;
+      color: white;
+      background-color: $blue;
+      padding: 20px 25px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    &-3
+    {
+      position: absolute;
+      top: 78%;
+      left: 41%;
+      width: 360px;
+      font-size: 1.5em;
+      color: white;
+      background-color: $blue;
+      padding: 20px 25px;
+      border-radius: 5px;
+      text-align: center;
+    }
+  }
 }
 
 .section6 // Femme avec le sandwich
@@ -191,19 +275,37 @@
   &-column
   {
     position: absolute;
-    top: 15%;
+    top: 25%;
+    &-name
+    {
+      color: $blue;
+      font-size: 1.2em !important;
+      
+    }
+    &-city
+    {
+      color: $blue;
+      font-style: italic;
+
+      &::before
+      {
+        content: '-';
+        padding: 10px;
+      }
+    }
     &-stars
     {
       width: 30px;
       height: auto;
       display: inline-block;
-      margin: 40px 2px;
+      margin: 20px 2px;
     }
     &-image
     {
       clip-path: circle(50%);
       width: 200px;
       height: auto;
+      margin-bottom: 30px;
     }
     &-text
     {
