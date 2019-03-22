@@ -1,6 +1,7 @@
 // NPM Import
 import React, { Fragment } from 'react'
-import { Menu, Button, Container } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
+import { Menu, Container } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
 
@@ -16,22 +17,15 @@ class NavMobile extends React.Component {
     this.setState({ activeItem: name })
   }
 
-  // handleClick = () => {
-  //   const { isLogged } = this.props
-
-  //   if (isLogged) {
-  //     this.setState({
-  //       isLogged: false,
-  //     })
-  //   } else {
-  //     this.setState({
-  //       isLogged: true,
-  //     })
-  //   }
-  // }
-
   render() {
-    const { activeItem, login, logout, menuMobile, open, isLogged } = this.props
+    const {
+      activeItem,
+      login,
+      logout,
+      menuMobile,
+      open,
+      isLogged,
+    } = this.props
 
     const classCSS = classNames({
       'nav-mobile-items--open': open,
@@ -77,14 +71,18 @@ class NavMobile extends React.Component {
               onClick={this.handleItemClick}
             />
             <div className="nav-mobile-button">
-              <Menu.Item as={NavLink} to="/agenda" className="nav-button--calendar" name="Mon agenda" />
-  
               {/* Navigation changements for sign in / sign up / login state */}
-  
+
               {
                 isLogged
                   ? (
                     <Fragment>
+                      <Menu.Item
+                        as={NavLink}
+                        to="/agenda"
+                        className="nav-button--calendar"
+                        name="Mon agenda"
+                      />
                       <Menu.Item
                         as={NavLink}
                         to="/mon-compte"
@@ -120,13 +118,20 @@ class NavMobile extends React.Component {
                   )
               }
             </div>
-
-           
           </Menu.Menu>
         </Menu>
       </Container>
     )
   }
+}
+
+NavMobile.propTypes = {
+  activeItem: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+  open: PropTypes.bool.isRequired,
+  login: PropTypes.func.isRequired,
+  menuMobile: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
 }
 
 // Export

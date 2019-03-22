@@ -1,6 +1,7 @@
 // NPM Import
 import React, { Fragment } from 'react'
-import { Menu, Button, Container } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
+import { Menu, Container } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 import Logo from 'src/components/Logo'
 
@@ -16,22 +17,13 @@ class NavDesktop extends React.Component {
     this.setState({ activeItem: name })
   }
 
-  // handleClick = () => {
-  //   const { isLogged } = this.props
-
-  //   if (isLogged) {
-  //     this.setState({
-  //       isLogged: false,
-  //     })
-  //   } else {
-  //     this.setState({
-  //       isLogged: true,
-  //     })
-  //   }
-  // }
-
   render() {
-    const { activeItem, isLogged, login, logout } = this.props
+    const {
+      activeItem,
+      isLogged,
+      login,
+      logout,
+    } = this.props
 
     return (
       <Container>
@@ -69,14 +61,19 @@ class NavDesktop extends React.Component {
               active={activeItem === 'Ma Liste De Courses'}
               onClick={this.handleItemClick}
             />
-            <Menu.Item as={NavLink} to="/agenda" className="nav-button--calendar" name="Mon agenda" />
-  
+
             {/* Navigation changements for sign in / sign up / login state */}
 
             {
               isLogged
                 ? (
                   <Fragment>
+                    <Menu.Item
+                      as={NavLink}
+                      to="/agenda"
+                      className="nav-button--calendar"
+                      name="Mon agenda"
+                    />
                     <Menu.Item
                       as={NavLink}
                       to="/mon-compte"
@@ -116,6 +113,13 @@ class NavDesktop extends React.Component {
       </Container>
     )
   }
+}
+
+NavDesktop.propTypes = {
+  activeItem: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+  login: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
 }
 
 // Export
