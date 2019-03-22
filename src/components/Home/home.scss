@@ -1,10 +1,12 @@
 @import '../../styles/vars';
 
-.section1
+.section1 // mockup du Mac
 {
   background-image: url('../../assets/rsz_lily-banse-365344-unsplash.jpg');
   position: relative;
-  height: 96vh;
+  display: cover;
+  background-repeat: no-repeat;
+  height: 84vh;
   z-index: -2;
 
   &:before {
@@ -16,11 +18,231 @@
     left: 0;
     width: 100%;
     background: linear-gradient(to right, $blue, $green);
+    background-repeat: no-repeat;
     opacity: .8;
   }
+
+  &-right
+  {
+    display: flex;
+    align-self: center;
+    color: white;
+
+    &-title{
+      font-size: 2.5em;
+      margin: 0 0 6% 7%
+      
+    }
+    &-text{
+      color: white;
+      font-size: 1.5em;
+      margin: 0 0 5% 11%
+    }
+    &-button{
+      color: white !important;
+      background-color: $green !important;
+      font-size: 1.5em !important;
+      margin: 10% 0 5% 50% !important;
+    }
+  }
+  &-left
+  {
+    &-image{
+      position: absolute;
+      right: -60%;
+      bottom: -0.8%;
+      width: 70vw;
+      height: auto;
+      clip-path: inset(0 11% 0 0);
+    }
+  }
 }
-.test
+
+.section2 // Carroussel des recettes
 {
-  width: 40vw;
-  height: auto;
+  position: relative;
+
+  &-title
+  {
+
+    position: absolute;
+    font-size: 2.5em;
+    color: $blue;
+    top:9%;
+  }
+}
+.section3 // présentation de l'agenda
+{
+  background-color: $green;
+  height: 70vh;
+  position: relative;
+
+
+  &-title
+  {
+    color: white;
+    position: absolute;
+    font-size: 2.5em;
+    top: 6%;
+  }
+  &-image
+  {
+    position: absolute;
+    top: 20%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.445);
+  }
+}
+.section4 // Mockup de l'iPhone et du Mac
+{
+  position: relative;
+  background-image: url('../../assets/Home/section-4-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
+
+  &-title
+  {
+    &-1
+    {
+      color: $blue;
+      position: absolute;
+      top: 10%;
+      left: 8%;
+      font-size: 2.5em;
+      text-align: center;
+    }
+    &-2
+    {
+      color: $blue;
+      position: absolute;
+      top: 20%;
+      left: 8%;
+      font-size: 2.5em;
+    }
+  }
+}
+.section5 // Présentation de la liste de courses
+{
+  position: relative;
+  background-color: $green;
+  height: 75vh;
+
+  &-title
+  {
+    color: $blue;
+    position: absolute;
+    font-size: 2.5em;
+    top: 6%;
+  }
+  &-image
+  {
+    position: absolute;
+    justify-content: center;
+    top: 25%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.445);
+    width: 50vw;
+    height: auto;
+  }
+}
+
+.section6 // Femme avec le sandwich
+{
+  position: relative;
+  background-image: url('../../assets/Home/section-6-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  height: 85vh;
+
+  &-title
+  {
+    color: $blue;
+    position: absolute;
+    text-align: center;
+    font-size: 2.5em;
+    top: 20%;
+    right: 5%;
+  }
+  &-button
+  {
+    color: white !important;
+    background-color: $blue !important;
+    font-size: 1.5em !important;
+    position: absolute;
+    height: 55px;
+    width: 200px;
+    right: 18%;
+    top: 45%;
+  }
+}
+.section7 // les avis
+{
+  position: relative;
+  background-color: $green;
+  height: 75vh;
+
+  &-title
+  {
+    color: $blue;
+    position: absolute;
+    font-size: 2.5em;
+    top: 5%;
+  }
+  &-column
+  {
+    position: absolute;
+    top: 15%;
+    &-stars
+    {
+      width: 30px;
+      height: auto;
+      display: inline-block;
+      margin: 40px 2px;
+    }
+    &-image
+    {
+      clip-path: circle(50%);
+      width: 200px;
+      height: auto;
+    }
+    &-text
+    {
+      width: 300px;
+      height: auto;
+      margin: auto;
+      color: $blue;
+    }
+  }
+}
+.sectionNewsletter
+{
+  position: relative;
+  background-color: #f9f9f9;
+  height: 40vh;
+
+  &-title
+  {
+    position: relative;
+    color: $blue;
+    font-size: 2.5em;
+    top: 5%;
+  }
+  &-text
+  {
+   color: $blue;
+   margin: 60px 0;
+  }
+  &-input
+  {
+    color: $blue;
+    position: absolute;
+    left: 1px;
+
+  }
+  &-button
+  {
+
+    background-color: $blue !important;
+    color: white !important;
+  }
 }

@@ -1,30 +1,39 @@
-// NPM import
-import React from 'react'
-import { Container, Grid } from 'semantic-ui-react'
+/**
+* NPM import
+*/
+import React, { Fragment } from 'react'
+import { Container } from 'semantic-ui-react'
 
-// Local import
+/**
+* local import
+*/
+
+// Import(s) du/des component(s)
+import Section1 from 'src/components/Home/Sections/Section1'
+import Section2 from 'src/components/Home/Sections/Section2'
+import Section3 from 'src/components/Home/Sections/Section3'
+import Section4 from 'src/components/Home/Sections/Section4'
+import Section5 from 'src/components/Home/Sections/Section5'
+import Section6 from 'src/components/Home/Sections/Section6'
+import Section7 from 'src/components/Home/Sections/Section7'
+import SectionNewsletter from 'src/components/Home/Sections/SectionNewsletter'
+
+// Style SCSS
 import './home.scss'
-
 
 // Code
 const Home = () => (
-
-  <Container fluid>
-    <Grid className="section1">
-      <Grid.Column width={9}>
-        <h2>Votre planning hebdo' en quelques clics !</h2>
-        <p>Vous en avez marre de ne pas savoir quoi faire pour le diner ?<br />
-        Nous sommes là pour vous aider !
-        </p>
-      </Grid.Column>
-      <Grid.Column width={6}>
-        <img className="test" src="src/assets/Mockup - copie.png" alt="" />
-      </Grid.Column>
-    </Grid>
-    <Grid className="section2">
-     
-    </Grid>
-
-  </Container>
+  <Fragment>
+    <Container fluid>
+      <Section1 />
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Section5 />
+      <Section6 />
+      <Section7 />
+      <SectionNewsletter />
+    </Container>
+  </Fragment>
 )
 export default Home
