@@ -2,15 +2,15 @@
 import { connect } from 'react-redux'
 
 // Import : src
-import NavDesktop from 'src/components/Nav/NavDesktop'
+import SignIn from 'src/components/AccountForm/SignIn'
 
 // action creators
 import { login, logout } from 'src/store/reducer'
 
-
 // === State / Données ===
 const mapStateToProps = state => ({
   isLogged: state.isLogged,
+  token: state.token,
 })
 
 // === Dispatch / Actions ===
@@ -24,10 +24,10 @@ const mapDispatchToProps = dispatch => ({
 })
 
 // Container
-const NavDesktopContainer = connect(
+const SignInContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(NavDesktop)
+)(SignIn)
 
 // Export
-export default NavDesktopContainer
+export default SignInContainer

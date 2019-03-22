@@ -1,7 +1,10 @@
+import axios from 'axios'
+
 // === Initial State ===
 const initialState = {
   open: false,
   isLogged: false,
+  token: '',
 }
 
 // === Types ===
@@ -22,12 +25,14 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: true,
+        token: localStorage.getItem('jwtToken'),
       }
 
     case LOGOUT:
       return {
         ...state,
         isLogged: false,
+        token: localStorage.removeItem('jwtToken'),
       }
 
     default:

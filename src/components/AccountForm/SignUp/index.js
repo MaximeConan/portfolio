@@ -66,7 +66,7 @@ class SignUp extends React.Component {
     if (password === confirmPassword) {
       axios({
         method: 'post',
-        url: 'http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public/registration',
+        url: 'http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/registration',
         data,
         headers: {
           'Content-Type': 'multipart/form-data; charset=UTF-8',

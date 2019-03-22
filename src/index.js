@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 /**
  * Local import
  */
-import App from 'src/components/App'
+import App from 'src/containers/App'
 
 import store from 'src/store'
 
