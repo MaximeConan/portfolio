@@ -2,7 +2,7 @@
 * NPM import
 */
 import React from 'react'
-import { Grid, Responsive } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 /**
 * local import
