@@ -3,8 +3,8 @@ import React, { Fragment } from 'react'
 
 // Local Import
 import './nav.scss'
-import NavDesktop from './NavDesktop'
-import NavMobile from './NavMobile'
+import NavMobile from 'src/containers/NavMobile'
+import NavDesktop from 'src/containers/NavDesktop'
 
 // Code
 class Nav extends React.Component {

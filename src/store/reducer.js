@@ -1,45 +1,49 @@
-/**
- * Initial State
- */
+// === Initial State ===
 const initialState = {
-  message: 'Hello',
-};
+  open: false,
+  isLogged: false,
+}
 
-/**
- * Types
- */
-const DO_SOMETHING = 'DO_SOMETHING';
+// === Types ===
+const SETTINGS_TOGGLE = 'SETTINGS_TOGGLE'
+const LOGIN = 'LOGIN'
+const LOGOUT = 'LOGOUT'
 
-/**
- * Reducer
- */
-const reducer = (state = initialState, action = {}) => {
+
+// === Reducer ===
+export default (state = initialState, action = {}) => {
   switch (action.type) {
-    case DO_SOMETHING:
+    case SETTINGS_TOGGLE:
       return {
         ...state,
-        message: action.message,
-      };
+        open: !state.open,
+      }
+    case LOGIN:
+      return {
+        ...state,
+        isLogged: true,
+      }
+
+    case LOGOUT:
+      return {
+        ...state,
+        isLogged: false,
+      }
 
     default:
-      return state;
+      return state
   }
-};
+}
 
-/**
- * Action Creators
- */
-export const doSomething = message => ({
-  type: DO_SOMETHING,
-  message,
-});
+// === Action creators ===
+export const toggle = () => ({
+  type: SETTINGS_TOGGLE,
+})
 
-/**
- * Selectors
- */
+export const login = () => ({
+  type: LOGIN,
+})
 
-
-/**
- * Export
- */
-export default reducer;
+export const logout = () => ({
+  type: LOGOUT,
+})
