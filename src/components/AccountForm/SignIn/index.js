@@ -52,7 +52,7 @@ class SignIn extends React.Component {
       password,
     }
 
-    axios.defaults.baseURL = 'http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public'
+    axios.defaults.baseURL = 'http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public'
     axios.defaults.headers.post['Content-Type'] = 'application/json'
     axios.defaults.headers.get['Content-Type'] = 'application/json'
 
