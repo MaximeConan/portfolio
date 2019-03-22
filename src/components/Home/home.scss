@@ -159,8 +159,8 @@
     &-1
     {
       position: absolute;
-      top: 20%;
-      left: 7%;
+      top: 16%;
+      left: 13%;
       width: 260px;
       font-size: 1.5em;
       color: white;
@@ -173,7 +173,8 @@
         font-size: 1em;
         position: absolute;
         width: 60vw;
-        left: 18%;
+        left: 50%;
+        right: 50%;
         padding: 10px 15px;
         text-align: center;
       }
@@ -383,11 +384,21 @@
     }
   }
 }
+.responsive-display-none
+{
+  @media screen and (min-width: 200px) and (max-width: 400px) {
+    display: none;
+  }
+}
+
+
+
 .section7 // les avis
 {
   position: relative;
   background-color: $green;
   height: 75vh;
+  display: flex;
 
   &-title
   {
@@ -403,15 +414,47 @@
       text-align: center;
     }
   }
-  &-column
+
+  &-wrap
   {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     position: absolute;
     top: 25%;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      top: 10%;
+    }
+  }
+  &-column
+  {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50vh;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      width: 48vw;
+      margin: 0 5px;
+    }
+    &-image
+    {
+      clip-path: circle(50%);
+      width: 200px;
+      height: auto;
+      margin: 30px auto;
+      justify-content: center;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        width: 100px;
+      }
+    }
     &-name
     {
       color: $blue;
       font-size: 1.2em !important;
-      
+
     }
     &-city
     {
@@ -430,23 +473,33 @@
       height: auto;
       display: inline-block;
       margin: 20px 2px;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        width: 20px;
+      }
     }
-    &-image
-    {
-      clip-path: circle(50%);
-      width: 200px;
-      height: auto;
-      margin-bottom: 30px;
-    }
+    
     &-text
     {
       width: 300px;
       height: auto;
       margin: auto;
       color: $blue;
+
+      @media screen and (min-width: 200px) and (max-width: 400px) {
+        width: 43vw;
+
+      }
     }
   }
 }
+.responsive-display-none
+{
+  @media screen and (min-width: 200px) and (max-width: 400px) {
+    display: none;
+  }
+}
+
 .sectionNewsletter
 {
   position: relative;
