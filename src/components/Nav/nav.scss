@@ -6,6 +6,8 @@
 }
 
 .nav-button--calendar, .nav-button--log {
+  min-width: 30% !important;
+  text-align: center;
   color: #FFF !important;
   font-weight: bold !important;
   padding: 1em 3em !important;

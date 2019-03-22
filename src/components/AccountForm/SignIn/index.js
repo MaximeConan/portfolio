@@ -23,7 +23,6 @@ const fields = [
     placeholder: 'Mot de passe',
     type: 'password',
   },
-
 ]
 
 // Code
@@ -65,16 +64,17 @@ class SignIn extends React.Component {
     })
       .then((response) => {
         console.log('Réponse post - signin : ', response)
-        /*
+
         const { token } = response.data
         localStorage.setItem('jwtToken', token)
         setAuthorizationToken(token)
         this.setState({
           username,
           password,
+          token,
           isLogged: response.data.isLogged,
           errors: response.data.errors,
-        }) */
+        })
       })
       .catch((error) => {
         console.log(error)
