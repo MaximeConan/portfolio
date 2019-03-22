@@ -1,6 +1,7 @@
 // NPM Import
 import React from 'react'
 import axios from 'axios'
+import algoliasearch from 'algoliasearch'
 import Slider from 'react-slick'
 import { Grid, GridColumn } from 'semantic-ui-react'
 import { Hits, Pagination } from 'react-instantsearch-dom'
@@ -31,6 +32,11 @@ class RecipesList extends React.Component {
       this.setState({
         recipes: response.data,
       })
+
+      const client = algoliasearch('35SA9ED0IY', '84da1b3d84081c5e3ac700fe1ecd98bc')
+      const index = client.initIndex('food_planner')
+
+      index.addObjects(this.state.recipes)
     }).catch((error) => {
       console.log(error)
     })
