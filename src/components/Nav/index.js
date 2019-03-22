@@ -2,6 +2,7 @@
 import React, { Fragment } from 'react'
 import { Menu, Button, Container } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
+import Logo from 'src/components/Logo'
 
 // Local Import
 import './nav.scss'
@@ -35,7 +36,7 @@ class Nav extends React.Component {
     return (
       <Container>
         <Menu secondary className="nav">
-          <h1>[Brand]</h1>
+          <h1><Logo /></h1>
           <Menu.Menu position="right">
             <Menu.Item
               as={NavLink}

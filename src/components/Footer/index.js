@@ -8,22 +8,16 @@ import {
 
 // Local import
 import './footer.scss'
+import Logo from 'src/components/Logo'
 
 // Code
 const Footer = () => (
   <div className="footer">
     <Container>
       <Grid>
-        <Grid.Row columns={1}>
-          <GridColumn textAlign="center">
-            <h1>
-              [Brand]
-            </h1>
-          </GridColumn>
-        </Grid.Row>
         <Grid.Row columns={4}>
           <Grid.Column>
-            <h3>[Brand]</h3>
+            <h3><Logo /></h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </Grid.Column>
           <Grid.Column>
