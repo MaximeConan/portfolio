@@ -97,9 +97,6 @@
 {
   position: relative;
 
-  // @media screen and (min-width: 200px) and (max-width: 400px) {
-  // }
-
   &-title
   {
     position: absolute;
@@ -160,7 +157,7 @@
     {
       position: absolute;
       top: 16%;
-      left: 13%;
+      left: 10%;
       width: 260px;
       font-size: 1.5em;
       color: white;
@@ -173,8 +170,9 @@
         font-size: 1em;
         position: absolute;
         width: 60vw;
-        left: 50%;
-        right: 50%;
+        top: 20%;
+        left: 20%;
+        right: 80%;
         padding: 10px 15px;
         text-align: center;
       }
@@ -219,7 +217,7 @@
         font-size: 1em;
         padding: 10px 15px;
         position: absolute;
-        left: 30px;
+        left: 38px;
         top: 85%;
         height: 60px;
         width: 80vw;

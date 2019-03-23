@@ -11,7 +11,7 @@ import './copyright.scss'
 const Copyright = () => (
   <div className="copyright">
     <Container fluid>
-      2019 FoodPlanner © - Une application dévelopée avec <i className="fas fa-heart" /> chez <a href="#">O'Clock</a>.
+      2019 FoodPlanner © - Une application développée avec <i className="fas fa-heart" /> chez <a href="#">O'Clock</a>.
     </Container>
   </div>
 )
