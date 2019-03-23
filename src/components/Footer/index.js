@@ -4,12 +4,13 @@ import {
   Container,
   Grid,
   GridColumn,
-  Responsive,
 } from 'semantic-ui-react'
 
 // Local import
 import './footer.scss'
 import Logo from 'src/components/Logo'
+import FooterMobile from './FooterMobile'
+import FooterWeb from './FooterWeb'
 
 // Code
 const Footer = () => (
@@ -23,72 +24,8 @@ const Footer = () => (
             </h1>
           </GridColumn>
         </Grid.Row>
-        <Responsive as={Grid} minWidth={400}>
-          <Grid.Row columns={4}>
-            <Grid.Column>
-              <h3>FoodPlanner</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </Grid.Column>
-            <Grid.Column>
-              <h3>Navigation</h3>
-              <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Les recettes</a></li>
-                <li><a href="#">Le blog</a></li>
-                <li><a href="#" className="footer-button">Connexion / Inscription</a></li>
-              </ul>
-            </Grid.Column>
-            <Grid.Column>
-              <h3>Liens utiles</h3>
-              <ul>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Conditions d'utilisation</a></li>
-              </ul>
-            </Grid.Column>
-            <Grid.Column>
-              <h3>Réseaux sociaux</h3>
-              <div className="footer-social-media">
-                <a href="#"><i className="fab fa-instagram" /></a>
-                <a href="#"><i className="fab fa-facebook-square" /></a>
-                <a href="#"><i className="fab fa-twitter-square" /></a>
-              </div>
-            </Grid.Column>
-          </Grid.Row>
-        </Responsive>
-        <Responsive as={Grid} maxWidth={400}>
-          <Grid.Column columns={4}>
-            <Grid.Column>
-              <h3>FoodPlanner</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </Grid.Column>
-            <Grid.Column>
-              <h3>Navigation</h3>
-              <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Les recettes</a></li>
-                <li><a href="#">Le blog</a></li>
-                <li><a href="#" className="footer-button">Connexion / Inscription</a></li>
-              </ul>
-            </Grid.Column>
-            <Grid.Column>
-              <h3>Liens utiles</h3>
-              <ul>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Conditions d'utilisation</a></li>
-              </ul>
-            </Grid.Column>
-            <Grid.Column>
-              <h3>Réseaux sociaux</h3>
-              <div className="footer-social-media">
-                <a href="#"><i className="fab fa-instagram" /></a>
-                <a href="#"><i className="fab fa-facebook-square" /></a>
-                <a href="#"><i className="fab fa-twitter-square" /></a>
-              </div>
-            </Grid.Column>
-          </Grid.Column>
-        </Responsive>
+        <FooterWeb />
+        <FooterMobile />
       </Grid>
     </Container>
   </div>
