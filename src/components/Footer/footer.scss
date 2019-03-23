@@ -5,7 +5,13 @@
   padding: 2em;
 
   &-logo {
+    position: relative;
     margin: 2em 0;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+      position: absolute;
+      top: 60px;
+    }
   }
 
   & h3 {
