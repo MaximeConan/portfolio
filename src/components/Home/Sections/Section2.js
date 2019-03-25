@@ -23,7 +23,7 @@ const Section2 = () => (
           height: '70vh',
         },
       }}
-      displayQuantityOfSide={2}
+      displayQuantityOfSide={1}
       navigation={false}
       infiniteScroll={0}
       enableScroll={0}
