@@ -11,6 +11,7 @@ import axiosInstance from 'src/data/axiosInstance'
 import './calendar.scss'
 import Day from './Day'
 import Meal from './Meal'
+import CalendarHeader from './CalendarHeader'
 import HeroSectionCalendar from './HeroSectionCalendar'
 
 // Code
@@ -22,11 +23,12 @@ class Calendar extends React.Component {
   token = localStorage.getItem('jwtToken')
 
   componentDidMount() {
-    axios.defaults.headers.post['Authorization'] = `Bearer ${this.token}`
-
     axiosInstance({
       method: 'get',
-      url: 'api/planning',
+      url: '/planning',
+      header: {
+        Authorization: `Bearer ${this.token}`,
+      },
     }).then((response) => {
       console.log('Réponse get Planning :', response)
       this.setState({
@@ -46,13 +48,7 @@ class Calendar extends React.Component {
         <HeroSectionCalendar />
         <Container>
           <Grid className="calendar">
-            <Grid.Row className="calendar-header">
-              <h2>Votre planning du 23/05 au 31/05</h2>
-              <div className="calendar-header-button">
-                <button type="submit" className="calendar-header-button--initial"><i className="fas fa-plus" /> Réinitialiser</button>
-                <button type="submit" className="calendar-header-button--save"><i className="fas fa-cloud-download-alt" /> Sauvegarder</button>
-              </div>
-            </Grid.Row>
+            <CalendarHeader planning={planning} />
             <Grid.Row>
               <ul className="calendar-days">
                 {

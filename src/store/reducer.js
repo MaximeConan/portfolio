@@ -4,7 +4,7 @@ import axios from 'axios'
 const initialState = {
   open: false,
   isLogged: false,
-  token: '',
+  token: localStorage.getItem('jwtToken'),
 }
 
 // === Types ===
