@@ -22,7 +22,7 @@ class Blog extends React.Component {
           <Configure hitsPerPage={3} />
           <Grid>
             <Grid.Row>
-              <Grid.Column width={4}>
+              <Grid.Column width={4} className="test">
                 <Sidebar />
               </Grid.Column>
               <Grid.Column width={12}>

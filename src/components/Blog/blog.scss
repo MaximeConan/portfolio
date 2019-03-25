@@ -8,6 +8,11 @@
   position: sticky;
   top: 0;
 
+  @media screen and (min-width: 200px) and (max-width: 400px) {
+
+
+  }
+
   & i {
     color: #f5b217;
     padding-right: .5em;
@@ -17,6 +22,10 @@
     padding-bottom: 1em;
     margin-bottom: 1em;
     border-bottom: 1px solid #97c6dc;
+
+    @media screen and (min-width: 200px) and (max-width: 400px) {
+
+    }
 
     &:last-child {
        border-bottom: none;
@@ -36,6 +45,9 @@
     border: none;
     box-shadow: $box-shadow;
     margin-bottom: 1em;
+  }
+  @media screen and (min-width: 200px) and (max-width: 400px) {
+    
   }
 } 
 
@@ -69,3 +81,4 @@
   }
 
 }
+
