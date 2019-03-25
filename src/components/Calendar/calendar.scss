@@ -1,10 +1,22 @@
 @import 'src/styles/vars';
 
 .recipe {
-  background-color: $blue-light;
-  color: $blue !important;
+  background-color: #aeb0e2;
+  color: #343890 !important;
   font-weight: bold;
-  border: 1px solid $blue !important;
+  border: 1px solid #343890 !important;
+  padding: .5em;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  font-size: .8em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &-icon {
     font-size: 1.2em;
@@ -24,6 +36,73 @@
   width: 100% !important;
   margin: 80px auto !important;
   box-shadow: 1px 20px 30px #cecece !important;
+  padding: 1em !important;
+
+  &-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+
+    &-button {
+
+      &--save, &--initial {
+        border: none;
+        padding: 1em 3em;
+        margin-right: 1em;
+        color: #FFF;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all .3s;
+      }
+    
+      &--save {
+        background-color: $blue;
+
+        &:hover {
+          background-color: $blue-dark
+        }
+      }
+
+      &--initial {
+        background-color: $green;
+
+        &:hover {
+          background-color: $green-dark
+        }
+      }
+    }
+  }
+
+  &-days {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    & li {
+      width: 100%;
+      display: inline;
+      text-align: center;
+      border: 1px solid #cecece;
+    }
+  }
+
+  &-cell {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    & ul {
+      width: 100%;
+      display: inline;
+      text-align: center;
+      border: 1px solid #cecece;
+      padding: 1em;
+    }
+
+    &-recipe {
+      color: $blue !important;
+    }
+  }
 
 
   &-cell-add--meal {
@@ -32,15 +111,22 @@
     color: #acacac;
     border-radius: 5px;
     font-size: .8em;
-    height: 120px;
+    height: 150px;
     width: 100%;
     max-width: 60px;
     min-width: 100%;
     display: flex;
     cursor: pointer;
-    background-size: cover;
-    background-repeat: no-repeat;
     transition: all .3s;
+    
+    &:first-child {
+      margin-bottom: 1em;
+      border-bottom: 1px solid $green;
+    }
+
+    &:last-child {
+      margin-top: 1em;
+    }
 
     &:hover {
       background-color: $blue-light;
@@ -72,6 +158,14 @@
       display: none;
       align-self: center;
       margin: auto;
+    }
+
+    & h4 {
+      margin-bottom: 0;
+    }
+
+    & i, p, div  {
+      display: none;
     }
   }
 
