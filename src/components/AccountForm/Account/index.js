@@ -12,9 +12,9 @@ class Account extends React.Component {
   state = {}
 
   options = [
-    { key: 'homme', text: 'Homme', value: 'Homme' },
-    { key: 'femme', text: 'Femme', value: 'Femme' },
-    { key: 'autre', text: 'Autre', value: 'Autre' },
+    { key: 'homme', text: 'Homme', value: 'Homme', image: { avatar: true, src: 'src/assets/employee.svg' } },
+    { key: 'femme', text: 'Femme', value: 'Femme', image: { avatar: true, src: 'src/assets/woman.svg' } },
+    { key: 'autre', text: 'Autre', value: 'Autre', image: { avatar: true, src: 'src/assets/woman.svg' } },
   ]
 
   token = localStorage.getItem('jwtToken')
@@ -138,8 +138,9 @@ class Account extends React.Component {
                 </Form.Field>
               </Fragment>
             ))}
-            <Select placeholder="Genre" onChange={this.handleChange} value={gender} options={this.options} />
-            <Checkbox label="Newletter" onClick={this.handleClick} checked={newsLetter} />
+            <p className="content-label">Editez votre genre</p>
+            <Select placeholder={gender} onChange={this.handleChange} value={gender} options={this.options} className="field-select" />
+            <Checkbox label="Vous souhaitez vous inscrire à notre newsletter ?" className="field-checkbox" onClick={this.handleClick} checked={newsLetter} />
             <Button className="field-button-submit" type="submit">Mettre à jour</Button>
           </Form>
         </Grid.Column>
