@@ -2,31 +2,41 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Grid } from 'semantic-ui-react'
+import axios from 'axios'
 
 
 // Local import
 import './calendar.scss'
+import axiosInstance from 'src/data/axiosInstance'
 
 // Code
 class CalendarHeader extends React.Component {
-  state = {
-
-  }
 
   handleClickInitial = () => {
-    const { planning } = this.props
-
-    const planningValue = Object.values(planning)
-
-    planningValue.map(day => (
-      day.map(currentDay => (
-        console.log(currentDay)
-      ))
-    ))
+    console.log('Initial click')
   }
 
   handleClickSave = () => {
     console.log('Save')
+    const { planning } = this.props
+
+    const data = {
+      planning,
+    }
+
+    axios.defaults.headers.post['Content-Type'] = 'application/json'
+
+    axiosInstance({
+      method: 'post',
+      url: '/planning/edit',
+      data,
+    })
+      .then((response) => {
+        console.log('Réponse post - Calendar Save : ', response)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   render() {
@@ -43,6 +53,10 @@ class CalendarHeader extends React.Component {
       </Grid.Row>
     )
   }
+}
+
+CalendarHeader.propTypes = {
+  planning: PropTypes.object.isRequired,
 }
 
 // Export

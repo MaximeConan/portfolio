@@ -13,6 +13,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
  */
 import App from 'src/containers/App'
 
+import { loadPlanning } from 'src/store/reducer'
+
 import store from 'src/store'
 
 /**
@@ -31,3 +33,6 @@ const target = document.getElementById('root')
 
 // rendu de react-dom : react VERS dom
 render(rootComponent, target)
+
+// Chargement des data
+store.dispatch(loadPlanning())
