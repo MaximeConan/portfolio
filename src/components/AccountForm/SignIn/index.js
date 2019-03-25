@@ -7,6 +7,7 @@ import {
   Grid,
 } from 'semantic-ui-react'
 import axios from 'axios'
+import axiosInstance from 'src/data/axiosInstance'
 import setAuthorizationToken from 'src/utils/setAuthorizationToken'
 
 // Local import
@@ -52,13 +53,11 @@ class SignIn extends React.Component {
       password,
     }
 
-    axios.defaults.baseURL = 'http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public'
     axios.defaults.headers.post['Content-Type'] = 'application/json'
     axios.defaults.headers.get['Content-Type'] = 'application/json'
 
-    axios({
+    axiosInstance({
       method: 'post',
-      crossDomain: true,
       url: 'api/login_check',
       data,
     })

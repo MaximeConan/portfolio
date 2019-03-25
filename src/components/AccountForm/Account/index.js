@@ -1,10 +1,10 @@
 // NPM import
 import React, { Fragment } from 'react'
-import axios from 'axios'
 import { Container, Grid, Form, Button, Checkbox, Select } from 'semantic-ui-react'
 
 // Local import
 import '../account-form.scss'
+import axiosInstance from 'src/data/axiosInstance'
 import Field from '../Field'
 
 // Code
@@ -20,11 +20,9 @@ class Account extends React.Component {
   token = localStorage.getItem('jwtToken')
 
   componentDidMount() {
-    axios.defaults.baseURL = ' http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/api'
-
-    axios({
+    axiosInstance({
       method: 'get',
-      url: '/profil',
+      url: 'api/profil',
       headers: { Authorization: `Bearer ${this.token}` },
     }).then((response) => {
       console.log('Réponse get Account :', response)
@@ -78,9 +76,9 @@ class Account extends React.Component {
     }
 
     if (password === confirmPassword) {
-      axios({
+      axiosInstance({
         method: 'post',
-        url: 'profil/edit',
+        url: 'api/profil/edit',
         data,
         headers: { Authorization: `Bearer ${this.token}` },
       }).then((response) => {

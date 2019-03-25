@@ -2,31 +2,31 @@
 import React, { Fragment } from 'react'
 import axios from 'axios'
 import {
-  Table,
   Grid,
   Container,
 } from 'semantic-ui-react'
+import axiosInstance from 'src/data/axiosInstance'
 
 // Local import
 import './calendar.scss'
+import Day from './Day'
+import Meal from './Meal'
 import HeroSectionCalendar from './HeroSectionCalendar'
-import { AST_PrefixedTemplateString } from 'terser';
 
 // Code
 class Calendar extends React.Component {
   state = {
-    planning: [], 
+    planning: [],
   }
 
   token = localStorage.getItem('jwtToken')
-  
-  componentDidMount() {
-    axios.defaults.baseURL = ' http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/api'
 
-    axios({
+  componentDidMount() {
+    axios.defaults.headers.post['Authorization'] = `Bearer ${this.token}`
+
+    axiosInstance({
       method: 'get',
-      url: '/planning',
-      headers: { Authorization: `Bearer ${this.token}` },
+      url: 'api/planning',
     }).then((response) => {
       console.log('Réponse get Planning :', response)
       this.setState({
@@ -42,24 +42,47 @@ class Calendar extends React.Component {
     console.log(planning)
 
     return (
-      <Container>
-        <Grid>
-          <Grid.Row>
-            {
-              Object.keys(planning).map(day => (
-                <li>{day}</li>
-              ))
-            }
-            {
-              Object.values(planning).map(day => (
-                day.map(currentDay => (
-                  <li>{currentDay.mealTime} / {currentDay.recipeTitle}</li>
-                ))
-              ))
-            }
-          </Grid.Row>
-        </Grid>
-      </Container>
+      <Fragment>
+        <HeroSectionCalendar />
+        <Container>
+          <Grid className="calendar">
+            <Grid.Row className="calendar-header">
+              <h2>Votre planning du 23/05 au 31/05</h2>
+              <div className="calendar-header-button">
+                <button type="submit" className="calendar-header-button--initial"><i className="fas fa-plus" /> Réinitialiser</button>
+                <button type="submit" className="calendar-header-button--save"><i className="fas fa-cloud-download-alt" /> Sauvegarder</button>
+              </div>
+            </Grid.Row>
+            <Grid.Row>
+              <ul className="calendar-days">
+                {
+                  Object.keys(planning).map(day => (
+                    <Day day={day} />
+                  ))
+                }
+              </ul>
+              {
+                <div className="calendar-cell">
+                  {
+                    Object.values(planning).map(day => (
+                      <ul>
+                        {
+                          day.map(currentDay => (
+                            <Meal currentDay={currentDay} />
+                          ))
+                        }
+                      </ul>
+                    ))
+                  }
+                </div>
+              }
+            </Grid.Row>
+            <Grid.Row textAlign="centered">
+              <a href="#" className="calendar-footer-button"><i className="fas fa-shopping-cart" /> Passer à la liste de course</a>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      </Fragment>
     )
   }
 

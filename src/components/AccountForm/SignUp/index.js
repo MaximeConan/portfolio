@@ -9,6 +9,7 @@ import {
   Select,
 } from 'semantic-ui-react'
 import axios from 'axios'
+import axiosInstance from 'src/data/axiosInstance'
 
 // Local import
 import '../account-form.scss'
@@ -85,14 +86,13 @@ class SignUp extends React.Component {
       gender,
     }
 
+    axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
+
     if (password === confirmPassword) {
-      axios({
+      axiosInstance({
         method: 'post',
-        url: 'http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/registration',
+        url: '/registration',
         data,
-        headers: {
-          'Content-Type': 'multipart/form-data; charset=UTF-8',
-        },
       })
         .then((response) => {
           console.log('Réponse post - signup : ', response)
