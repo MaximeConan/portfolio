@@ -5,8 +5,11 @@ import {
   Button,
   Form,
   Grid,
+  Checkbox,
+  Select,
 } from 'semantic-ui-react'
 import axios from 'axios'
+import axiosInstance from 'src/data/axiosInstance'
 
 // Local import
 import '../account-form.scss'
@@ -40,6 +43,12 @@ class SignUp extends React.Component {
   // State de App
   state = {}
 
+  options = [
+    { key: 'homme', text: 'Homme', value: 'Homme', image: { avatar: true, src: 'src/assets/employee.svg' } },
+    { key: 'femme', text: 'Femme', value: 'Femme', image: { avatar: true, src: 'src/assets/woman.svg' } },
+    { key: 'autre', text: 'Autre', value: 'Autre', image: { avatar: true, src: 'src/assets/woman.svg' } },
+  ]
+
   inputChange = (event) => {
     const { value, name } = event.target
 
@@ -48,6 +57,16 @@ class SignUp extends React.Component {
     })
   }
 
+  handleClick = () => {
+    const { newsLetter } = this.state
+
+    this.setState({
+      newsLetter: !newsLetter,
+    })
+  }
+
+  handleChange = (e, { value }) => this.setState({ gender: value })
+
   handleSubmit = (event) => {
     event.preventDefault()
     const {
@@ -55,22 +74,25 @@ class SignUp extends React.Component {
       confirmPassword,
       email,
       username,
+      newsLetter,
+      gender,
     } = this.state
 
     const data = {
       username,
       email,
       password,
+      newsLetter,
+      gender,
     }
 
+    axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
+
     if (password === confirmPassword) {
-      axios({
+      axiosInstance({
         method: 'post',
-        url: 'http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/registration',
+        url: '/registration',
         data,
-        headers: {
-          'Content-Type': 'multipart/form-data; charset=UTF-8',
-        },
       })
         .then((response) => {
           console.log('Réponse post - signup : ', response)
@@ -92,7 +114,7 @@ class SignUp extends React.Component {
 
   // Render
   render() {
-    const { errors } = this.state
+    const { errors, newsLetter, gender } = this.state
 
     return (
       <Container fluid className="background-image" textAlign="center">
@@ -102,10 +124,7 @@ class SignUp extends React.Component {
           </div>
           <Form className="field" onSubmit={this.handleSubmit}>
             <h3 className="field-gender-text">Vous êtes ?</h3>
-            <div className="field-gender-button-images">
-              <Button circular className="field-gender-button-image"><img src="src/assets/employee.svg" alt="" /></Button>
-              <Button circular className="field-gender-button-image"><img src="src/assets/woman.svg" alt="" /></Button>
-            </div>
+            <Select placeholder="Genre" onChange={this.handleChange} value={gender} options={this.options} className="field-select" />
             {fields.map(field => (
               <Form.Field required>
                 <label className="field-label">{field.name}</label>
@@ -119,6 +138,7 @@ class SignUp extends React.Component {
                 />
               </Form.Field>
             ))}
+            <Checkbox label="Vous souhaitez vous inscrire à notre newsletter ?" className="field-checkbox" onClick={this.handleClick} checked={newsLetter} />
             <ul>
               {
                 errors ? errors.map((error, index) => <li className="form-message--error" key={index}>{error}</li>) : null

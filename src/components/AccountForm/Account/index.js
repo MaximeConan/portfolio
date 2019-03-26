@@ -1,24 +1,28 @@
 // NPM import
-import React from 'react'
-import axios from 'axios'
-import { Container, Grid, Form, Button } from 'semantic-ui-react'
+import React, { Fragment } from 'react'
+import { Container, Grid, Form, Button, Checkbox, Select } from 'semantic-ui-react'
 
 // Local import
 import '../account-form.scss'
+import axiosInstance from 'src/data/axiosInstance'
 import Field from '../Field'
 
 // Code
 class Account extends React.Component {
   state = {}
 
+  options = [
+    { key: 'homme', text: 'Homme', value: 'Homme', image: { avatar: true, src: 'src/assets/employee.svg' } },
+    { key: 'femme', text: 'Femme', value: 'Femme', image: { avatar: true, src: 'src/assets/woman.svg' } },
+    { key: 'autre', text: 'Autre', value: 'Autre', image: { avatar: true, src: 'src/assets/woman.svg' } },
+  ]
+
   token = localStorage.getItem('jwtToken')
 
   componentDidMount() {
-    axios.defaults.baseURL = ' http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/api'
-
-    axios({
+    axiosInstance({
       method: 'get',
-      url: '/profil',
+      url: 'api/profil',
       headers: { Authorization: `Bearer ${this.token}` },
     }).then((response) => {
       console.log('Réponse get Account :', response)
@@ -26,9 +30,9 @@ class Account extends React.Component {
         email: response.data.email,
         username: response.data.username,
         gender: response.data.gender,
-        newsletter: response.data.newsletter,
+        newsLetter: response.data.newsLetter,
       })
-    }).catch((error) => {ttp://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/api/profil/edit
+    }).catch((error) => {
       console.log(error)
     })
   }
@@ -41,6 +45,16 @@ class Account extends React.Component {
     })
   }
 
+  handleClick = () => {
+    const { newsLetter } = this.state
+
+    this.setState({
+      newsLetter: !newsLetter,
+    })
+  }
+
+  handleChange = (e, { value }) => this.setState({ gender: value })
+
   handleSubmit = (event) => {
     event.preventDefault()
 
@@ -49,18 +63,22 @@ class Account extends React.Component {
       username,
       password,
       confirmPassword,
+      newsLetter,
+      gender,
     } = this.state
 
     const data = {
       username,
       email,
       password,
+      newsLetter,
+      gender,
     }
 
     if (password === confirmPassword) {
-      axios({
+      axiosInstance({
         method: 'post',
-        url: 'profil/edit',
+        url: 'api/profil/edit',
         data,
         headers: { Authorization: `Bearer ${this.token}` },
       }).then((response) => {
@@ -75,13 +93,9 @@ class Account extends React.Component {
   }
 
   render() {
-    const { username } = this.state
+    const { username, newsLetter, gender } = this.state
 
     const fields = [
-      {
-        name: 'username',
-        placeholder: 'Pseudo',
-      },
       {
         name: 'email',
         placeholder: 'email',
@@ -103,22 +117,28 @@ class Account extends React.Component {
       <Container fluid className="background-image" textAlign="center">
         <Grid.Column className="content">
           <div className="content-text">
-            <h1>Hello {username} ça va ? Gérez votre compte ici :</h1>
+            <h1>Hello <span className="content-username">{username}</span> ça va ? Gérez votre compte ici :</h1>
           </div>
           <Form className="field" onSubmit={this.handleSubmit}>
             {fields.map(field => (
-              <Form.Field required>
-                <label className="field-label">{field.name}</label>
-                <Field
-                  required
-                  className="field-input"
-                  key={field.name}
-                  value={this.state[field.name]}
-                  onInputChange={this.inputChange}
-                  {...field}
-                />
-              </Form.Field>
+              <Fragment>
+                <p className="content-label">Editez votre {field.name}</p>
+                <Form.Field required>
+                  <label className="field-label">{field.name}</label>
+                  <Field
+                    required
+                    className="field-input"
+                    key={field.name}
+                    value={this.state[field.name]}
+                    onInputChange={this.inputChange}
+                    {...field}
+                  />
+                </Form.Field>
+              </Fragment>
             ))}
+            <p className="content-label">Editez votre genre</p>
+            <Select placeholder={gender} onChange={this.handleChange} value={gender} options={this.options} className="field-select" />
+            <Checkbox label="Vous souhaitez vous inscrire à notre newsletter ?" className="field-checkbox" onClick={this.handleClick} checked={newsLetter} />
             <Button className="field-button-submit" type="submit">Mettre à jour</Button>
           </Form>
         </Grid.Column>
