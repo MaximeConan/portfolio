@@ -91,10 +91,36 @@ export default (state = initialState, action = {}) => {
     }
 
     case REMOVE_MEAL:
-      console.log(action.recipeTitle, action)
+      console.log('Action :', action)
+
+      const currentDay =
+        Object.keys(state.planning.data)
+        .map(currentDayKey => {
+          return [
+            currentDayKey
+          ]
+        })
+
+        const mealTime = 'Repas'
+
+      console.log('current Day :', currentDay)
 
       return {
         ...state,
+        planning: {
+          ...state.planning,
+          data: {
+            ...state.planning.data,
+            [currentDay]: {
+              ...state.planning.data[currentDay],
+              [mealTime]: {
+                mealTime: '',
+                recipeTitle: '',
+                planningId: '12',
+              },
+            },
+          },
+        },
       }
 
     default:
