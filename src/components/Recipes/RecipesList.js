@@ -24,8 +24,8 @@ class RecipesList extends React.Component {
   componentDidMount() {
     axiosInstance({
       method: 'get',
-      url: '/',
-      // headers: { Authorization: `Bearer ${this.token}` },
+      url: '/api/recipe',
+      headers: { Authorization: `Bearer ${this.token}` },
     }).then((response) => {
       console.log('Réponse get Recipe :', response)
       this.setState({

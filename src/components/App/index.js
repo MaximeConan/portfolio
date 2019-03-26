@@ -28,13 +28,12 @@ import Account from 'src/components/AccountForm/Account'
 
 
 // Data import
-import recipes from 'src/data/recipes'
 import posts from 'src/data/posts'
 
 import PrivateRoute from './PrivateRoute'
 
 // Code
-const App = () => (
+const App = ({ recipes }) => (
   <div id="app">
     <Nav />
     <Switch>

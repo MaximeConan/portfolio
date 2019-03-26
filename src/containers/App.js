@@ -10,6 +10,7 @@ import App from 'src/components/App'
 const mapStateToProps = state => ({
   isLogged: state.isLogged,
   token: state.token,
+  recipes: state.recipes,
 })
 
 // === Dispatch / Actions ===
