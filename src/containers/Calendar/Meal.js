@@ -5,12 +5,12 @@ import { connect } from 'react-redux'
 import Meal from 'src/components/Calendar/Meal'
 
 // action creators
-import { removeMeal } from 'src/store/reducer'
+import { removeMeal } from 'src/store/Reducers/calendar'
 
 // === State (Données) ===
 const mapStateToProps = (state, ownProps) => ({
-  planning: state.planning.data,
-  dataLoaded: state.dataLoaded,
+  planning: state.calendar.planning.data,
+  dataLoaded: state.calendar.dataLoaded,
 })
 
 // === Dispatch (Actions) ===

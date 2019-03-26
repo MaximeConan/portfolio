@@ -20,8 +20,8 @@ import Calendar from 'src/components/Calendar'
  * Pas de data à transmettre ? const mapStateToProps = null
  */
 const mapStateToProps = (state, ownProps) => ({
-  planning: state.planning.data,
-  dataLoaded: state.dataLoaded,
+  planning: state.calendar.planning.data,
+  dataLoaded: state.calendar.dataLoaded,
 })
 
 /* === Actions ===
