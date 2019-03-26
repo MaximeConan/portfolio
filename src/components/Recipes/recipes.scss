@@ -1,5 +1,14 @@
 @import 'src/styles/vars';
 
+
+.ais-Hits-item, .ais-InfiniteHits-item, .ais-InfiniteResults-item, .ais-Results-item
+{
+  @media screen and (min-width: 200px) and (max-width: 400px) {
+    width: 100%;
+  }
+}
+
+
 .sidebar {
   background-color: #eef4fb;
   padding: 2em;
