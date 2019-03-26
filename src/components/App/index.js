@@ -12,7 +12,7 @@ import Footer from 'src/components/Footer'
 import Copyright from 'src/components/Copyright'
 
 import Home from 'src/components/Home'
-import Calendar from 'src/containers/Calendar'
+import Calendar from 'src/containers/Calendar/Calendar'
 import ShoppingList from 'src/components/ShoppingList'
 
 import Recipes from 'src/components/Recipes'

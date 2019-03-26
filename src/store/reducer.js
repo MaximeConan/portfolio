@@ -11,10 +11,11 @@ const initialState = {
 const SETTINGS_TOGGLE = 'SETTINGS_TOGGLE'
 const LOGIN = 'LOGIN'
 const LOGOUT = 'LOGOUT'
+const REMOVE_ALL_MEAL = 'REMOVE_ALL_MEAL'
+const REMOVE_MEAL = 'REMOVE_MEAL'
 
 export const LOAD_PLANNING = 'LOAD_PLANNING'
 export const RECEIVED_PLANNING = 'RECEIVED_PLANNING'
-
 
 // === Reducer ===
 export default (state = initialState, action = {}) => {
@@ -51,6 +52,35 @@ export default (state = initialState, action = {}) => {
         dataLoaded: true,
       }
 
+    case REMOVE_ALL_MEAL: {
+      const emptyPlanning = Object.assign(
+        {},
+        Object.values(state.planning.data).map(currentDay => (
+          Object.values(currentDay).map(() => (
+            {
+              mealTime: '',
+              recipeTitle: '',
+            }
+          ))
+        )),
+      )
+
+      return {
+        ...state,
+        planning: {
+          status: 'ok',
+          data: emptyPlanning,
+        },
+      }
+    }
+
+    case REMOVE_MEAL:
+      console.log(action.recipeTitle, action)
+
+      return {
+        ...state,
+      }
+
     default:
       return state
   }
@@ -76,4 +106,13 @@ export const loadPlanning = () => ({
 export const receivedPlanning = data => ({
   type: RECEIVED_PLANNING,
   data,
+})
+
+export const removeAllMeal = () => ({
+  type: REMOVE_ALL_MEAL,
+})
+
+export const removeMeal = recipeTitle => ({
+  type: REMOVE_MEAL,
+  recipeTitle,
 })
