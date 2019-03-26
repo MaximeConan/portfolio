@@ -7,6 +7,7 @@ import {
   Grid,
 } from 'semantic-ui-react'
 import axios from 'axios'
+import axiosInstance from 'src/data/axiosInstance'
 import setAuthorizationToken from 'src/utils/setAuthorizationToken'
 
 // Local import
@@ -23,7 +24,6 @@ const fields = [
     placeholder: 'Mot de passe',
     type: 'password',
   },
-
 ]
 
 // Code
@@ -53,28 +53,27 @@ class SignIn extends React.Component {
       password,
     }
 
-    axios.defaults.baseURL = 'http://antoine-gagnepain.vpnuser.oclock.io/FoodPlanner/public'
     axios.defaults.headers.post['Content-Type'] = 'application/json'
     axios.defaults.headers.get['Content-Type'] = 'application/json'
 
-    axios({
+    axiosInstance({
       method: 'post',
-      crossDomain: true,
       url: 'api/login_check',
       data,
     })
       .then((response) => {
         console.log('Réponse post - signin : ', response)
-        /*
+
         const { token } = response.data
         localStorage.setItem('jwtToken', token)
         setAuthorizationToken(token)
         this.setState({
           username,
           password,
+          token,
           isLogged: response.data.isLogged,
           errors: response.data.errors,
-        }) */
+        })
       })
       .catch((error) => {
         console.log(error)

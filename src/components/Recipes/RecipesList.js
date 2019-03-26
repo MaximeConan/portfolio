@@ -1,11 +1,10 @@
 // NPM Import
 import React from 'react'
+import axios from 'axios'
+import algoliasearch from 'algoliasearch'
 import Slider from 'react-slick'
 import { Grid, GridColumn } from 'semantic-ui-react'
 import { Hits, Pagination } from 'react-instantsearch-dom'
-
-// Data import
-import recipesData from 'src/data/recipes'
 
 // Local import
 import './recipes.scss'
@@ -16,7 +15,31 @@ import RecipeItemSlider from './RecipeItemSlider'
 // Code
 class RecipesList extends React.Component {
   state = {
-    recipes: recipesData,
+    recipes: [],
+  }
+
+  token = localStorage.getItem('jwtToken')
+
+  componentDidMount() {
+    axios.defaults.baseURL = ' http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/api'
+
+    axios({
+      method: 'get',
+      url: '/recipe',
+      headers: { Authorization: `Bearer ${this.token}` },
+    }).then((response) => {
+      console.log('Réponse get Recipe :', response)
+      this.setState({
+        recipes: response.data,
+      })
+
+      const client = algoliasearch('35SA9ED0IY', '84da1b3d84081c5e3ac700fe1ecd98bc')
+      const index = client.initIndex('food_planner')
+
+      index.addObjects(this.state.recipes)
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 
   render() {

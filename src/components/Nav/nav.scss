@@ -6,6 +6,7 @@
 }
 
 .nav-button--calendar, .nav-button--log {
+  text-align: center;
   color: #FFF !important;
   font-weight: bold !important;
   padding: 1em 3em !important;
@@ -37,8 +38,12 @@
   }
 }
 
-// réglages de la nav sur 
+// réglages de la nav sur mobile
 @media screen and (max-width: 980px) {
+  .nav-button--calendar, .nav-button--log {
+    min-width: 30% !important;
+  }
+
   .nav-desktop {
     display: none !important;
   }
