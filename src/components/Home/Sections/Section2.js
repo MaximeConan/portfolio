@@ -18,12 +18,12 @@ const Section2 = () => (
           width: '100vw',
           height: '80vh',
         },
-        '@media (min-width: 80vw)': {
+        '@media (min-width: 200px)': {
           width: '100vw',
           height: '70vh',
         },
       }}
-      displayQuantityOfSide={2}
+      displayQuantityOfSide={1}
       navigation={false}
       infiniteScroll={0}
       enableScroll={0}

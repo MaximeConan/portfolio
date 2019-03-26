@@ -22,10 +22,10 @@ const Footer = () => (
             </h1>
           </GridColumn>
         </Grid.Row>
-        <Grid.Row columns={4}>
+        <Grid.Row className="footer-column" columns={4}>
           <Grid.Column>
             <h3>FoodPlanner</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Foodplanner, le site qui vous fait gagner du temps dans votre organisation des repas de la semaine et fait votre liste de courses pour vous !</p>
           </Grid.Column>
           <Grid.Column>
             <h3>Navigation</h3>

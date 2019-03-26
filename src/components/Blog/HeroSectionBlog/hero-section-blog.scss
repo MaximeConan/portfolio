@@ -1,10 +1,18 @@
 @import 'src/styles/vars';
 
+
+.ui.fluid.container {
+  width: 100%;
+  margin: 0 !important;
+}
+
 .hero-section-blog {
   padding: 120px 0px;
   position: relative;
   background-size: cover;
   background-position: center;
+  width: 100vw;
+
 
   &:before {
     content:"";
@@ -28,3 +36,11 @@
     }
   }
 }
+
+.test
+{
+  @media screen and (min-width: 200px) and (max-width: 400px) {
+    width: 100vw;
+  }
+}
+

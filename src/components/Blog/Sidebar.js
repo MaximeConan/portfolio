@@ -8,8 +8,8 @@ import './blog.scss'
 
 // Code
 const Sidebar = () => (
-  <aside className="sidebar">
-    <h2>Affinez :</h2>
+  <div className="sidebar">
+    <h2>Affinez :</h2>
     <ClearRefinements
       clearsQuery
       translations={{
@@ -34,7 +34,7 @@ const Sidebar = () => (
         <li><Radio label="+ 30 min" /></li>
       </ul>
     </div>
-  </aside>
+  </div>
 )
 
 
