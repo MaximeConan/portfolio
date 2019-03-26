@@ -21,7 +21,7 @@ class RecipesList extends React.Component {
   token = localStorage.getItem('jwtToken')
 
   componentDidMount() {
-    axios.defaults.baseURL = ' http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/api'
+    axios.defaults.baseURL = ' http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/API_Backend/public/'
 
     axios({
       method: 'get',
