@@ -19,7 +19,7 @@ import Calendar from 'src/components/Calendar'
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null
  */
-const mapStateToProps = (state, ownProps) => (console.log('State :', state), {
+const mapStateToProps = (state, ownProps) => ({
   planning: state.planning.data,
   dataLoaded: state.dataLoaded,
 })

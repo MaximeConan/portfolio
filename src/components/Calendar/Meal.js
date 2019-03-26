@@ -9,23 +9,25 @@ import './calendar.scss'
 
 
 class Meal extends React.Component {
-  state = {
-    currentDay: this.props.currentDay,
-  }
+  // state = {
+  //   currentDay: this.props.currentDay,
+  // }
 
   handleClickDelete = () => {
-    const { currentDay } = this.state
+    (console.log('handleClickDelete'))
+    // const { currentDay } = this.state
     
-    this.setState({
-      currentDay: {
-        mealTime: currentDay.mealTime,
-        recipeTitle: '',
-      },
-    })
+    // this.setState({
+    //   currentDay: {
+    //     mealTime: currentDay.mealTime,
+    //     recipeTitle: '',
+    //   },
+    // })
   }
 
   render() {
-    const { currentDay } = this.state
+    // const { currentDay } = this.state
+    const { removeMeal, currentDay } = this.props
 
     return (
       <li className={currentDay.recipeTitle === '' ? 'calendar-cell-add--meal' : 'recipe'}>
@@ -38,7 +40,7 @@ class Meal extends React.Component {
           </p>
           <div className="recipe-icon">
             <i className="fas fa-sign-out-alt" />
-            <i className="fas fa-trash-alt" onClick={this.handleClickDelete} />
+            <i className="fas fa-trash-alt" onClick={removeMeal} />
           </div>
         </span>
       </li>
