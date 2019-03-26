@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
  */
 import App from 'src/containers/App'
 
-import { loadPlanning } from 'src/store/reducer'
+import { loadPlanning, loadRecipes } from 'src/store/reducer'
 
 import store from 'src/store'
 
@@ -36,3 +36,4 @@ render(rootComponent, target)
 
 // Chargement des data
 store.dispatch(loadPlanning())
+store.dispatch(loadRecipes())

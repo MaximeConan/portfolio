@@ -17,6 +17,9 @@ const REMOVE_MEAL = 'REMOVE_MEAL'
 export const LOAD_PLANNING = 'LOAD_PLANNING'
 export const RECEIVED_PLANNING = 'RECEIVED_PLANNING'
 
+export const LOAD_RECIPES = 'LOAD_RECIPES'
+export const RECEIVED_RECIPES = 'RECEIVED_RECIPES'
+
 // === Reducer ===
 export default (state = initialState, action = {}) => {
   switch (action.type) {
@@ -49,6 +52,19 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         planning: action.data,
+        dataLoaded: true,
+      }
+
+    case LOAD_RECIPES:
+      return {
+        ...state,
+        dataLoaded: false,
+      }
+
+    case RECEIVED_RECIPES:
+      return {
+        ...state,
+        recipes: action.data,
         dataLoaded: true,
       }
 
@@ -105,6 +121,15 @@ export const loadPlanning = () => ({
 
 export const receivedPlanning = data => ({
   type: RECEIVED_PLANNING,
+  data,
+})
+
+export const loadRecipes = () => ({
+  type: LOAD_RECIPES,
+})
+
+export const receivedRecipes = data => ({
+  type: RECEIVED_RECIPES,
   data,
 })
 
