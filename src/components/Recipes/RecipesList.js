@@ -55,7 +55,7 @@ class RecipesList extends React.Component {
     }
     return (
       <main className="content">
-        <h2>Retrouves toutes nos recettes</h2>
+        <h2>Retrouvez toutes nos recettes</h2>
         <Grid>
           <Grid.Row columns={3}>
             <Hits hitComponent={RecipeItem} />
@@ -64,7 +64,7 @@ class RecipesList extends React.Component {
             <Pagination />
           </Grid.Row>
         </Grid>
-        <h2>Retrouves les 10 recettes les mieux notées</h2>
+        <h2>Retrouvez les 10 recettes les mieux notées</h2>
         <Grid>
           <Grid.Row columns={1}>
             <GridColumn>
