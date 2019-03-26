@@ -1,17 +1,15 @@
 // NPM import
 import React, { Fragment } from 'react'
-import axios from 'axios'
 import {
   Grid,
   Container,
 } from 'semantic-ui-react'
-import axiosInstance from 'src/data/axiosInstance'
 
 // Local import
 import './calendar.scss'
+import CalendarHeader from 'src/containers/Calendar/CalendarHeader'
+import Meal from 'src/containers/Calendar/Meal'
 import Day from './Day'
-import Meal from './Meal'
-import CalendarHeader from './CalendarHeader'
 import HeroSectionCalendar from './HeroSectionCalendar'
 
 // Code
@@ -28,7 +26,7 @@ class Calendar extends React.Component {
           <HeroSectionCalendar />
           <Container>
             <Grid className="calendar">
-              <CalendarHeader planning={planning} />
+              <CalendarHeader />
               <Grid.Row>
                 <ul className="calendar-days">
                   {

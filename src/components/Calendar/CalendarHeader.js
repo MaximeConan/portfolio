@@ -11,32 +11,31 @@ import axiosInstance from 'src/data/axiosInstance'
 
 // Code
 class CalendarHeader extends React.Component {
+  token = localStorage.getItem('jwtToken')
 
   handleClickInitial = () => {
-    console.log('Initial click')
+    const { removeAllMeal } = this.props
+    
+    removeAllMeal()
   }
 
   handleClickSave = () => {
-    console.log('Save')
     const { planning } = this.props
 
     const data = {
       planning,
     }
 
-    axios.defaults.headers.post['Content-Type'] = 'application/json'
-
     axiosInstance({
       method: 'post',
-      url: '/planning/edit',
+      url: 'api/planning/edit',
       data,
+      headers: { Authorization: `Bearer ${this.token}` },
+    }).then((response) => {
+      console.log('Réponse post Calendar Save :', response)
+    }).catch((error) => {
+      console.log(error)
     })
-      .then((response) => {
-        console.log('Réponse post - Calendar Save : ', response)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
   }
 
   render() {
