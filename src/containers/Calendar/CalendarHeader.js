@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import CalendarHeader from 'src/components/Calendar/CalendarHeader'
 
 // Action Creators
-import { removeAllMeal } from 'src/store/reducer'
+import { removeAllMeal } from 'src/store/Reducers/calendar'
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -20,8 +20,8 @@ import { removeAllMeal } from 'src/store/reducer'
  * Pas de data à transmettre ? const mapStateToProps = null
  */
 const mapStateToProps = (state, ownProps) => ({
-  planning: state.planning.data,
-  dataLoaded: state.dataLoaded,
+  planning: state.calendar.planning.data,
+  dataLoaded: state.calendar.dataLoaded,
 })
 
 /* === Actions ===

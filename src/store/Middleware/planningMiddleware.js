@@ -4,9 +4,8 @@
 import axios from 'axios'
 
 // Import
-import { LOAD_PLANNING, receivedPlanning, LOAD_RECIPES, receivedRecipes } from 'src/store/reducer'
+import { LOAD_PLANNING, receivedPlanning } from 'src/store/Reducers/calendar'
 
-const recipesURL = 'http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/API_Backend/public/'
 const planningURL = 'http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/API_Backend/public/planning'
 
 const ajax = store => next => (action) => {
@@ -16,17 +15,6 @@ const ajax = store => next => (action) => {
         .get(planningURL)
         .then(({ data }) => {
           store.dispatch(receivedPlanning(data))
-        })
-        .catch(() => {
-          console.error('HOOOO')
-        })
-      break
-
-    case LOAD_RECIPES:
-      axios
-        .get(recipesURL)
-        .then(({ data }) => {
-          store.dispatch(receivedRecipes(data))
         })
         .catch(() => {
           console.error('HOOOO')

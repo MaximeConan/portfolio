@@ -5,13 +5,13 @@ import { connect } from 'react-redux'
 import NavMobile from 'src/components/Nav/NavMobile'
 
 // action creators
-import { toggle, login, logout } from 'src/store/reducer'
+import { toggle, login, logout } from 'src/store/Reducers/account'
 
 
 // === State / Données ===
 const mapStateToProps = state => ({
-  open: state.open,
-  isLogged: state.isLogged,
+  open: state.account.open,
+  isLogged: state.account.isLogged,
 })
 
 // === Dispatch / Actions ===

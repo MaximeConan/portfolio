@@ -5,12 +5,12 @@ import { connect } from 'react-redux'
 import SignIn from 'src/components/AccountForm/SignIn'
 
 // action creators
-import { login, logout } from 'src/store/reducer'
+import { login, logout } from 'src/store/Reducers/account'
 
 // === State / Données ===
 const mapStateToProps = state => ({
-  isLogged: state.isLogged,
-  token: state.token,
+  isLogged: state.account.isLogged,
+  token: state.account.token,
 })
 
 // === Dispatch / Actions ===

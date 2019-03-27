@@ -5,12 +5,12 @@ import { connect } from 'react-redux'
 import NavDesktop from 'src/components/Nav/NavDesktop'
 
 // action creators
-import { login, logout } from 'src/store/reducer'
+import { login, logout } from 'src/store/Reducers/account'
 
 
 // === State / Données ===
 const mapStateToProps = state => ({
-  isLogged: state.isLogged,
+  isLogged: state.account.isLogged,
 })
 
 // === Dispatch / Actions ===

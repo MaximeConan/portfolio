@@ -5,6 +5,7 @@ import { NumericMenu, RefinementList, ClearRefinements } from 'react-instantsear
 
 // Local import
 import './recipes.scss'
+import { CustomNumericMenu } from './CustomNumericMenu'
 
 // Code
 const Sidebar = () => (
@@ -18,7 +19,7 @@ const Sidebar = () => (
     />
     <div className="sidebar-filter">
       <p>Calories</p>
-      <NumericMenu
+      <CustomNumericMenu
         attribute="calorie"
         translations={{
           all: 'Tout',
@@ -30,12 +31,6 @@ const Sidebar = () => (
           { label: '+ 600 calories', start: 601 },
         ]}
       />
-      <ul>
-        <li><Radio label="Tout" /></li>
-        <li><Radio label="- de 300 calories" /></li>
-        <li><Radio label="0 à 600 calories" /></li>
-        <li><Radio label="+ 600 calories" /></li>
-      </ul>
     </div>
     <div className="sidebar-filter">
       <p>Difficulté</p>
