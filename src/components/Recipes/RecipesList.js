@@ -14,19 +14,14 @@ import RecipeItemSlider from './RecipeItemSlider'
 
 // Code
 class RecipesList extends React.Component {
-  state = {
-    recipes: [],
-  }
-
   token = localStorage.getItem('jwtToken')
 
   componentDidMount() {
-    axios.defaults.baseURL = ' http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/api'
+    axios.defaults.baseURL = 'http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/API_Backend/public'
 
     axios({
       method: 'get',
       url: '/recipe',
-      headers: { Authorization: `Bearer ${this.token}` },
     }).then((response) => {
       console.log('Réponse get Recipe :', response)
       this.setState({
@@ -35,15 +30,16 @@ class RecipesList extends React.Component {
 
       const client = algoliasearch('35SA9ED0IY', '84da1b3d84081c5e3ac700fe1ecd98bc')
       const index = client.initIndex('food_planner')
+      const { recipes } = this.props
 
-      index.addObjects(this.state.recipes)
+      index.addObjects(recipes)
     }).catch((error) => {
       console.log(error)
     })
   }
 
   render() {
-    const { recipes } = this.state
+    const { recipes } = this.props
 
     const settings = {
       className: 'center',

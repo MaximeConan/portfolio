@@ -6,7 +6,7 @@ import axios from 'axios'
 // Import
 import { LOAD_RECIPES, receivedRecipes } from 'src/store/Reducers/recipes'
 
-const recipesURL = 'http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/API_Backend/public/'
+const recipesURL = 'http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/API_Backend/public/recipe'
 
 const ajax = store => next => (action) => {
   switch (action.type) {

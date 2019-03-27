@@ -15,7 +15,7 @@ import Home from 'src/components/Home'
 import Calendar from 'src/containers/Calendar/Calendar'
 import ShoppingList from 'src/components/ShoppingList'
 
-import Recipes from 'src/components/Recipes'
+import Recipes from 'src/containers/Recipes'
 import Recipe from 'src/components/Recipe'
 
 import Blog from 'src/components/Blog'
@@ -34,6 +34,7 @@ import PrivateRoute from './PrivateRoute'
 
 // Code
 const App = ({ recipes }) => (
+  console.log('Recipes.recipes :', recipes),
   <div id="app">
     <Nav />
     <Switch>
@@ -47,6 +48,7 @@ const App = ({ recipes }) => (
           // { match: { params: { slug } } } : permet de destructurer l'objet match et ses enfants
           const { slug } = match.params
 
+          console.log(slug, recipes.map(recipe => recipe.slug))
           const currentRecipe = recipes.find(recipe => recipe.slug === slug)
 
           if (currentRecipe) {
