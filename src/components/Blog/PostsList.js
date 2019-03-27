@@ -22,7 +22,7 @@ class PostsList extends React.Component {
 
     return (
       <main className="content">
-        <h2>Retrouvez tous nos articles</h2>
+        <h2>Retrouves tous nos articles</h2>
         <Grid>
           <Grid.Row columns={1}>
             <Hits hitComponent={PostItem} className="content-hits" />

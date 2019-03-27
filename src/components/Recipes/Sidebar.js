@@ -9,7 +9,7 @@ import './recipes.scss'
 // Code
 const Sidebar = () => (
   <aside className="sidebar">
-    <h2>Affinez :</h2>
+    <h2>Affinez :</h2>
     <ClearRefinements
       clearsQuery
       translations={{

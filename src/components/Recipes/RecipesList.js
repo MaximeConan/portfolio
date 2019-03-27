@@ -8,7 +8,6 @@ import { Hits, Pagination } from 'react-instantsearch-dom'
 
 // Local import
 import './recipes.scss'
-import axiosInstance from 'src/data/axiosInstance'
 import RecipeItem from './RecipeItem'
 import RecipeItemSlider from './RecipeItemSlider'
 
@@ -22,9 +21,11 @@ class RecipesList extends React.Component {
   token = localStorage.getItem('jwtToken')
 
   componentDidMount() {
-    axiosInstance({
+    axios.defaults.baseURL = ' http://aurelie-calle.vpnuser.oclock.io/Spe/Apo/foodplanner/public/api'
+
+    axios({
       method: 'get',
-      url: '/api/recipe',
+      url: '/recipe',
       headers: { Authorization: `Bearer ${this.token}` },
     }).then((response) => {
       console.log('Réponse get Recipe :', response)
@@ -54,7 +55,7 @@ class RecipesList extends React.Component {
     }
     return (
       <main className="content">
-        <h2>Retrouves toutes nos recettes</h2>
+        <h2>Retrouvez toutes nos recettes</h2>
         <Grid>
           <Grid.Row columns={3}>
             <Hits hitComponent={RecipeItem} />
@@ -63,7 +64,7 @@ class RecipesList extends React.Component {
             <Pagination />
           </Grid.Row>
         </Grid>
-        <h2>Retrouves les 10 recettes les mieux notées</h2>
+        <h2>Retrouvez les 10 recettes les mieux notées</h2>
         <Grid>
           <Grid.Row columns={1}>
             <GridColumn>
