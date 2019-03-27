@@ -28,23 +28,18 @@ export default (state = initialState, action = {}) => {
       }
 
     case REMOVE_ALL_MEAL: {
-      const emptyPlanning = Object.assign(
-        {},
-        Object.values(state.planning.data).map(currentDay => (
-          Object.values(currentDay).map(() => (
-            {
-              mealTime: '',
-              recipeTitle: '',
-            }
-          ))
-        )),
-      )
+      const reset = { recipeTitle: '' }
+
+      const newState = { ...state }
+
+      for (const currentDay in newState.planning.data) {
+        newState.planning.data[currentDay] = state.planning.data[currentDay].map(dayValues => ({ ...dayValues, ...reset }))
+      }
 
       return {
         ...state,
-        planning: {
-          status: 'ok',
-          data: emptyPlanning,
+        data: {
+          ...newState,
         },
       }
     }
@@ -52,15 +47,9 @@ export default (state = initialState, action = {}) => {
     case REMOVE_MEAL:
       console.log('Action :', action)
 
-      const currentDay =
-        Object.keys(state.planning.data)
-        .map(currentDayKey => {
-          return [
-            currentDayKey
-          ]
-        })
+      const currentDay = Object.keys(state.planning.data).map(currentDayKey => [currentDayKey])
 
-        const mealTime = 'Repas'
+      const mealTime = 'Repas'
 
       console.log('current Day :', currentDay)
 
